@@ -16,7 +16,7 @@ class CreatePicturesEventsTable extends Migration
         Schema::create('pictures_events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titre', 100);
-            $table->string('lien', 100);
+            $table->string('url_img_event', 100);
             $table->unsignedInteger('event_id');
             $table->timestamps();
 

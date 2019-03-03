@@ -16,7 +16,7 @@ class CreatePicturesPartnersTable extends Migration
         Schema::create('pictures_partners', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titre', 100);
-            $table->string('lien', 100);
+            $table->string('url_img_partners', 100);
             $table->unsignedInteger('partner_id');
             $table->timestamps();
 

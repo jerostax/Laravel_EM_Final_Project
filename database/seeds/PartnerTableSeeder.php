@@ -12,7 +12,7 @@ class PartnerTableSeeder extends Seeder
     public function run()
     {
         //Suppresion de toutes les images avant de commencer les seeders
-        Storage::disk('local')->delete(Storage::allFiles());
+        // Storage::disk('local')->delete(Storage::allFiles());
 
         //Création de 10 partenaires à partir de la factory
         factory(App\Partner::class, 10)->create()->each(function($partner){
@@ -24,7 +24,7 @@ class PartnerTableSeeder extends Seeder
 
             $partner->picturePartner()->create([
                 'titre' => 'Default', 
-                'lien' => $link
+                'url_img_partners' => $link
             ]);
             $partner->save(); 
         });

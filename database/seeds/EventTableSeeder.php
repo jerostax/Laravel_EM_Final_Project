@@ -46,7 +46,7 @@ class EventTableSeeder extends Seeder
 
             $event->pictureEvent()->create([
                 'titre' => 'Default',  
-                'lien' => $link
+                'url_img_event' => $link
             ]);
         });
     }

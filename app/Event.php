@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        'Titre', 'Description', 'category_id', 'Status'
+        'Titre', 'Description', 'category_id', 'Status', 'Prix'
     ];
 
     public function setCategoryIdAttribute($value){
@@ -24,6 +24,6 @@ class Event extends Model
         return $this->belongsTo(Category::class);
     }
     public function pictureEvent(){
-        return $this->hasMany(PictureEvent::class);
+        return $this->hasOne(PictureEvent::class);
     }
 }

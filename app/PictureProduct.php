@@ -8,7 +8,7 @@ class PictureProduct extends Model
 {
     public $table = 'pictures_products';
     protected $fillable = [
-        'lien', 'titre'
+        'url_img_products', 'titre'
     ];
     public function product() {
         return $this->belongsTo(Product::class);
