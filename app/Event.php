@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    protected $fillable = [
+        'Titre', 'Description', 'category_id', 'Status'
+    ];
+
     public function setCategoryIdAttribute($value){
        
         if($value == 0){

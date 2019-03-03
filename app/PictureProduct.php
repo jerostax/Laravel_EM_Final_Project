@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PictureProduct extends Model
 {
+    public $table = 'pictures_products';
     protected $fillable = [
         'lien', 'titre'
     ];

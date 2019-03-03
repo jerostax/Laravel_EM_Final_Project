@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PictureEvent extends Model
 {
+    public $table = 'pictures_events';
+    
     protected $fillable = [
         'lien', 'titre'
     ];

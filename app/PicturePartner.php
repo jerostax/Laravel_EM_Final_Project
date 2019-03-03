@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PicturePartner extends Model
 {
+    public $table = 'pictures_partners';
     protected $fillable = [
         'lien', 'titre'
     ];
