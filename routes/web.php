@@ -18,6 +18,10 @@
 Route::get('/', 'FrontController@index')->name('home');
 Route::post('/newsletter', 'FrontController@newsLetter');
 
+Route::get('/events', 'FrontController@showEvents')->name('events');
+Route::get('/shop', 'FrontController@showShop')->name('shop');
+Route::get('/partners', 'FrontController@showPartners')->name('partners');
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

@@ -24,17 +24,37 @@ class FrontController extends Controller
     }
     public function index(){
 
-        $events = Event::paginate($this->paginate); // pagination
-        $products = Product::paginate($this->paginate);
+        $events = Event::published()->paginate($this->paginate); // pagination
+        $products = Product::published()->paginate($this->paginate);
         $partners = Partner::paginate($this->paginate);
 
         return view('front.index', ['events' => $events, 'products' => $products, 'partners' => $partners]);
 
     }
+    public function showEvents(){
+
+        $events = Event::published()->paginate(5);
+
+        return view('front.events', ['events' => $events]);
+    }
+    public function showShop(){
+        
+        $products = Product::published()->paginate(5);
+        
+
+        return view('front.shop', ['products' => $products]);
+    }
+    public function showPartners(){
+        
+        $partners = Partner::paginate(5);
+        
+
+        return view('front.partners', ['partners' => $partners]);
+    }
     public function newsLetter (Request $request) {
         if(!Newsletter::isSubscribed($request->email)){
             Newsletter::subscribePending($request->email);
-            return redirect('/')->with('success', 'Vérifiez votre mail pour les prochaines étapes');
+            return redirect('/')->with('success', "Vérifiez votre mail pour confirmer l'abonnement!");
         }
         return redirect('/')->with('failure', 'désolé vous êtes déjà abonné');
     }

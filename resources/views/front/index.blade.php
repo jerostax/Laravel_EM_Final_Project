@@ -1,13 +1,62 @@
 @extends('layouts.master')
-
+@section('header')
+<div id='slider'>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade animated fadeInRight"
+            data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                @foreach($events as $event)
+                <div class="carousel-item active">
+                    <img src="{{asset('images/'.$event->pictureEvent->url_img_event)}}" class="d-block " alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Évènements</h2>
+                        <p>{{$event->Titre}}</p>
+                        <p>{{$event->category->Titre}}</p>
+                    </div>
+                </div>
+                @endforeach
+                @foreach($products as $product)
+                <div class="carousel-item">
+                    <img src="{{asset('images/'.$product->pictureProduct->url_img_products)}}" class="d-block " alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Shop</h2>
+                        <p>{{$product->Nom}}</p>
+                    </div>
+                </div>
+                @endforeach
+                {{-- <div class="carousel-item">
+                    <img src="" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Mbappé</h2>
+                        <p>Le jeune phénomène hors norme</p>
+                    </div>
+                </div> --}}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+      </div>
+    @endsection
 @section('content')
-<div class='col-12'>
+<div class='col-12 animated fadeInLeft'>
+
 {{$events->links()}}
-<h2>TOUS LES EVENTS</h2>
+
+<h2 id='events'><a href='{{route('events')}}'>TOUS LES EVENTS</a></h2>
 
 <ul class="list-group">
 @forelse($events as $event)
-<li class="list-group-item">
+
 <h2><a href="{{url('event', $event->id)}}">{{$event->Titre}}</a></h2>
 
 <img width="171" src="{{asset('images/'.$event->pictureEvent->url_img_event)}}" alt="{{$event->pictureEvent->titre}}">
@@ -38,13 +87,14 @@
 @endforelse
 </ul>
 </div>
-<div class='col-12'>
-        {{$products->links()}}
-        <h2>TOUS LES PRODUITS</h2>
+
+<div class='col-12 hideR animated '>
         
-        <ul class="list-group">
+        <h2 id='products'><a href='{{route('shop')}}'>TOUS LES PRODUITS</a></h2>  
+        <ul class="list-group">               
         @forelse($products as $product)
-        <li class="list-group-item">
+        
+        
         <h2><a href="{{url('product', $product->id)}}">{{$product->Nom}}</a></h2>
         
         <img width="171" src="{{asset('images/'.$product->pictureProduct->url_img_products  )}}" alt="{{$product->pictureProduct->titre}}">
@@ -67,13 +117,13 @@
         @endforelse
         </ul>
         </div>
-        <div class='col-12'>
-                {{$partners->links()}}
-                <h2>TOUS LES PARTENAIRES</h2>
+        
+        <div class='col-12 hideL animated '>
+                
+                <h2 id='partners'><a href='{{route('partners')}}'>TOUS LES PARTENAIRES</a></h2>
                 
                 <ul class="list-group">
                 @forelse($partners as $partner)
-                <li class="list-group-item">
                 <h2><a href="{{url('partner', $partner->id)}}">{{$partner->Nom}}</a></h2>
                 
                 <img width="171" src="{{asset('images/'.$partner->picturePartner->url_img_partners  )}}" alt="{{$partner->picturePartner    ->titre}}">
@@ -88,7 +138,7 @@
                 @endforelse
                 </ul>
                 </div>
-                <div class="card-body col-3">
+                <div class="card-body col-3 hideR animated">
                         @if (session('success'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('success') }}
@@ -100,10 +150,10 @@
                                 {{ session('failure') }}
                             </div>
                         @endif
-    
+                        
                        <h2>Inscrivez-vous à notre NewsLetter</h2>
     
-                       <form action="{{url('/newsletter')}}" method='post'>
+                       <form  action="{{url('/newsletter')}}" method='post'>
                         {{ csrf_field() }}
                            <div class='form-group'>
                                <label for="email">Email</label>

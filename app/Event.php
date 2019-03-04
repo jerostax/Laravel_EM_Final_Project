@@ -20,6 +20,9 @@ class Event extends Model
         }
 
     }
+    public function scopePublished($query) {
+        return $query->where('Status', 'Publié');
+    }
     public function category(){
         return $this->belongsTo(Category::class);
     }
