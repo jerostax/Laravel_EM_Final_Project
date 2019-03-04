@@ -1,1 +1,15 @@
-<h1 style='background-color:orange'>MENU</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">NMENU</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Events</a>
+            <a class="nav-item nav-link" href="#">Shop</a>
+            <a class="nav-item nav-link" href="{{route('register')}}">Register</a>
+            <a class="nav-item nav-link" href="{{route('login')}}">Login</a>
+          </div>
+        </div>
+      </nav>

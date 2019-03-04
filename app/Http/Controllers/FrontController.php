@@ -7,6 +7,7 @@ use App\Event;
 use App\Category;
 use App\Product;
 use App\Partner;
+Use Newsletter;
 
 
 class FrontController extends Controller
@@ -29,5 +30,12 @@ class FrontController extends Controller
 
         return view('front.index', ['events' => $events, 'products' => $products, 'partners' => $partners]);
 
+    }
+    public function newsLetter (Request $request) {
+        if(!Newsletter::isSubscribed($request->email)){
+            Newsletter::subscribePending($request->email);
+            return redirect('/')->with('success', 'Vérifiez votre mail pour les prochaines étapes');
+        }
+        return redirect('/')->with('failure', 'désolé vous êtes déjà abonné');
     }
 }

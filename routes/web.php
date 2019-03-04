@@ -16,3 +16,8 @@
 // });
 
 Route::get('/', 'FrontController@index')->name('home');
+Route::post('/newsletter', 'FrontController@newsLetter');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
