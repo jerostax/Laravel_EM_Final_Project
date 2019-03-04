@@ -13,16 +13,16 @@ class EventTableSeeder extends Seeder
     {
          //création des catégories
          App\Category::create([
-            'Titre'=>'Expos'
+            'titre'=>'Expos'
         ]);
         App\Category::create([
-            'Titre' => 'WorkShop'
+            'titre' => 'WorkShop'
         ]);
         App\Category::create([
-            'Titre' => 'Excursions'
+            'titre' => 'Excursions'
         ]);
         App\Category::create([
-            'Titre' => 'Soirée'
+            'titre' => 'Soirée'
         ]);
         
         //Suppresion de toutes les images avant de commencer les seeders

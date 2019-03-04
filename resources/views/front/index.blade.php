@@ -14,8 +14,8 @@
                     <img src="{{asset('images/'.$event->pictureEvent->url_img_event)}}" class="d-block " alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Évènements</h2>
-                        <p>{{$event->Titre}}</p>
-                        <p>{{$event->category->Titre}}</p>
+                        <p>{{$event->titre}}</p>
+                        <p>{{$event->category->titre}}</p>
                     </div>
                 </div>
                 @endforeach
@@ -24,7 +24,8 @@
                     <img src="{{asset('images/'.$product->pictureProduct->url_img_products)}}" class="d-block " alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Shop</h2>
-                        <p>{{$product->Nom}}</p>
+                        <p>{{$product->titre}}</p>
+                        <p>{{$product->prix}} €</p>
                     </div>
                 </div>
                 @endforeach
@@ -57,30 +58,30 @@
 <ul class="list-group">
 @forelse($events as $event)
 
-<h2><a href="{{url('event', $event->id)}}">{{$event->Titre}}</a></h2>
+<h2><a href="{{url('event', $event->id)}}">{{$event->titre}}</a></h2>
 
 <img width="171" src="{{asset('images/'.$event->pictureEvent->url_img_event)}}" alt="{{$event->pictureEvent->titre}}">
 
 
 <div class="col-xs-6 col-md-9">
 <h3>Déscription :</h3>
-{{$event->Description}}
+{{$event->description}}
 </div>
 <div class="col-xs-6 col-md-9">
     <h3>Prix :</h3>
-    <p>{{$event->Prix}} €</p>
+    <p>{{$event->prix}} €</p>
 </div>
 <div class="col-xs-6 col-md-9">
         <h3>Date :</h3>
-        {{$event->Date}} 
+        {{$event->date}} 
 </div>
 <div class="col-xs-6 col-md-9">
         <h3>Status :</h3>
-        {{$event->Status}}
+        {{$event->status}}
 </div>
 <div class="col-xs-6 col-md-9">
         <h3>Catégorie :</h3>
-        {{$event->category->Titre}}
+        {{$event->category->titre}}
 </div>
 @empty
 <li>Désolé pour l'instant aucun évènement n'est publié sur le site</li>
@@ -95,18 +96,18 @@
         @forelse($products as $product)
         
         
-        <h2><a href="{{url('product', $product->id)}}">{{$product->Nom}}</a></h2>
+        <h2><a href="{{url('product', $product->id)}}">{{$product->titre}}</a></h2>
         
         <img width="171" src="{{asset('images/'.$product->pictureProduct->url_img_products  )}}" alt="{{$product->pictureProduct->titre}}">
         
         
         <div class="col-xs-6 col-md-9">
         <h3>Déscription :</h3>
-        {{$product->Description}}
+        {{$product->description}}
         </div>
         <div class="col-xs-6 col-md-9">
             <h3>Prix :</h3>
-            <p>{{$product->Prix}} €</p>
+            <p>{{$product->prix}} €</p>
         </div>
         <div class="col-xs-6 col-md-9">
                 <h3>Status :</h3>
@@ -124,14 +125,14 @@
                 
                 <ul class="list-group">
                 @forelse($partners as $partner)
-                <h2><a href="{{url('partner', $partner->id)}}">{{$partner->Nom}}</a></h2>
+                <h2><a href="{{url('partner', $partner->id)}}">{{$partner->nom}}</a></h2>
                 
                 <img width="171" src="{{asset('images/'.$partner->picturePartner->url_img_partners  )}}" alt="{{$partner->picturePartner    ->titre}}">
                 
                 
                 <div class="col-xs-6 col-md-9">
                 <h3>Déscription :</h3>
-                {{$partner->Description}}
+                {{$partner->description}}
                 </div>
                 @empty
                 <li>Désolé pour l'instant aucun produit n'est publié sur le site</li>

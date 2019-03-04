@@ -3,7 +3,7 @@
 <h1>PAGE SHOP</h1>
 
 @foreach($products as $product)
-<p>{{$product->Nom}}</p>
+<p>{{$product->titre}}</p>
 <p>{{$product->status}}</p>
 @endforeach
 @endsection

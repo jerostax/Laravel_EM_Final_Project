@@ -14,8 +14,8 @@ class ProductTableSeeder extends Seeder
         //Suppresion de toutes les images avant de commencer les seeders
         // Storage::disk('local')->delete(Storage::allFiles());
 
-        //Création de 30 produits à partir de la factory
-        factory(App\Product::class, 30)->create()->each(function($product){
+        //Création de 10 produits à partir de la factory
+        factory(App\Product::class, 10)->create()->each(function($product){
 
             //Ajout des images
             $link = str_random(12).'.jpg'; // hash de lien pour la sécurité (injection de scripts de protection)

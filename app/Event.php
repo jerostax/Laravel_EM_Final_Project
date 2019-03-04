@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $fillable = [
-        'Titre', 'Description', 'category_id', 'Status', 'Prix'
+        'titre', 'description', 'category_id', 'status', 'prix'
     ];
 
     public function setCategoryIdAttribute($value){
@@ -21,7 +21,7 @@ class Event extends Model
 
     }
     public function scopePublished($query) {
-        return $query->where('Status', 'Publié');
+        return $query->where('status', 'Publié');
     }
     public function category(){
         return $this->belongsTo(Category::class);

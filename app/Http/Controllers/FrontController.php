@@ -18,7 +18,7 @@ class FrontController extends Controller
 
         // méthode pour injecter des données à une vue partielle 
         view()->composer('partials.menu', function($view){
-            $categories = Category::pluck('Titre', 'id')->all(); // on récupère un tableau associatif ['id' => 1]
+            $categories = Category::pluck('titre', 'id')->all(); // on récupère un tableau associatif ['id' => 1]
             $view->with('categories', $categories ); // on passe les données à la vue
         });
     }

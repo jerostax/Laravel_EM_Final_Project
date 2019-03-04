@@ -3,7 +3,7 @@
 <h1>PAGE PARTENAIRES</h1>
 
 @foreach($partners as $partner)
-<p>{{$partner->Nom}}</p>
-<p>{{$partner->Description}}</p>
+<p>{{$partner->nom}}</p>
+<p>{{$partner->description}}</p>
 @endforeach
 @endsection

@@ -15,11 +15,11 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('Titre', 100);
-            $table->text('Description');
-            $table->decimal('Prix', 6, 2);
-            $table->dateTime('Date');
-            $table->enum('Status', ['Publié', 'Brouillon']);
+            $table->string('titre', 100);
+            $table->text('description');
+            $table->decimal('prix', 6, 2);
+            $table->dateTime('date');
+            $table->enum('status', ['Publié', 'Brouillon']);
             $table->timestamps();
         });
     }
