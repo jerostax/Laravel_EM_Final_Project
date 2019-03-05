@@ -16,6 +16,7 @@
 @include('partials.menu')
 
     @yield('header')
+    @yield('dashboard-nav')
 <div class="container">
 
     <div class="row">

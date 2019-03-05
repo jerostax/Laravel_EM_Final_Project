@@ -11,12 +11,12 @@ img {
     max-width: 100%;
 }
 .container {
-    /* background-color:rgb(173,216,230,0.2) */
     background-color:white;
 }
 .hideR, .hideL, .hideU {
     opacity: 0;
 }
+/*---------- FRONT VIEWS & PARTIALS ----------*/
 
 /*------ MENU VIEW -----*/
 .navbar {
@@ -48,6 +48,11 @@ img {
 .carousel-caption{
     bottom:25%;
 }
+footer {
+    margin-top:5em;
+    background-color:lightgrey;
+}
+/*---------- AUTH VIEWS ----------*/
 
 /*----- REGISTER VIEW -----*/
 
@@ -55,4 +60,32 @@ img {
     background-color:white;
     margin-top:10em;
     margin-bottom:10em;
+}
+
+/*---------- BACK VIEWS ----------*/
+
+/*-----BACK INDEX VIEW -----*/
+#dash-nav {
+    margin-top:2.5em;
+    max-width: 12%;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 2em;
+    
+}
+#dash-title {
+    font-weight: bold;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: grey;
+}
+#v-pills-tab > a {
+    padding-top:1em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    color:black;
+}
+.dash-list {
+    margin-top: 2.5em;
+    margin-left: 2.5em;
 }

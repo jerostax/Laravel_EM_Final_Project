@@ -1,1 +1,3 @@
-<h1 style='background-color:orange'>FOOTER</h1>
+<footer>
+        <h1>FOOTER</h1>
+</footer>
