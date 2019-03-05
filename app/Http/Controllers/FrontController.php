@@ -22,6 +22,7 @@ class FrontController extends Controller
             $view->with('categories', $categories ); // on passe les données à la vue
         });
     }
+    //Vue page d'acceuil
     public function index(){
 
         $events = Event::published()->paginate($this->paginate); // pagination
@@ -31,12 +32,14 @@ class FrontController extends Controller
         return view('front.index', ['events' => $events, 'products' => $products, 'partners' => $partners]);
 
     }
+    //Vue de tous les évènements
     public function showEvents(){
 
         $events = Event::published()->paginate(5);
 
         return view('front.events', ['events' => $events]);
     }
+    //Vue du shop
     public function showShop(){
         
         $products = Product::published()->paginate(5);
@@ -44,6 +47,7 @@ class FrontController extends Controller
 
         return view('front.shop', ['products' => $products]);
     }
+    //Vue des partenaires
     public function showPartners(){
         
         $partners = Partner::paginate(5);
@@ -51,6 +55,7 @@ class FrontController extends Controller
 
         return view('front.partners', ['partners' => $partners]);
     }
+    //NewsLetter MailChimp
     public function newsLetter (Request $request) {
         if(!Newsletter::isSubscribed($request->email)){
             Newsletter::subscribePending($request->email);

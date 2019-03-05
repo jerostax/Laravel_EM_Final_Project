@@ -11,7 +11,8 @@ img {
     max-width: 100%;
 }
 .container {
-    background-color:rgb(173,216,230,0.2)
+    /* background-color:rgb(173,216,230,0.2) */
+    background-color:white;
 }
 .hideR, .hideL, .hideU {
     opacity: 0;
@@ -46,4 +47,12 @@ img {
 }
 .carousel-caption{
     bottom:25%;
+}
+
+/*----- REGISTER VIEW -----*/
+
+#register {
+    background-color:white;
+    margin-top:10em;
+    margin-bottom:10em;
 }

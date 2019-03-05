@@ -49,6 +49,8 @@
       </div>
     @endsection
 @section('content')
+@component('components.who')
+@endcomponent
 <div class='col-12 animated fadeInLeft'>
 
 {{$events->links()}}
