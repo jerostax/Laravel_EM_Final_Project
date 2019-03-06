@@ -6,18 +6,25 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
               
-          <a class="nav-item nav-link" href="{{route('home')}}">Accueil</a>
-            <a class="nav-item nav-link" href="#events">Évènements</a>
-            <a class="nav-item nav-link" href="#products">Shop</a>
-            <a class="nav-item nav-link" href="#partners">Partenaires</a>
-
+            <a class="nav-item nav-link mynav" href="{{route('home')}}">Accueil</a>
+            
+           
+            <a class="nav-item nav-link mynav" href="{{route('events')}}">Bouge ton fluid</a>
+            <a class="nav-item nav-link mynav" href="{{url('/adhesion')}}">Adhérer au collectif</a>
+            <a class="nav-item nav-link mynav" href="{{route('shop')}}">Shop</a>
+            <a class="nav-item nav-link mynav" href=""><i class="fas fa-search"></i></a>
+            
             @if(Auth::guard('web')->check())
             
             <div class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-            {{ Auth::guard('web')->user()->name }} <span class="caret"></span></a>
-
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle mynav" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <i class="fas fa-user"></i>
+              
+                <span class="caret"></span></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <div class='dropdown-item'>{{ Auth::guard('web')->user()->name }} 
+                </div>
+                
                 <a class="dropdown-item" href="{{ route('user.logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
@@ -32,14 +39,14 @@
 
             @else 
 
-            <a class="nav-item nav-link" href="{{route('register')}}">Register</a>
-            <a class="nav-item nav-link" href="{{route('login')}}">Login</a>
+            <a class="nav-item nav-link mynav" href="{{route('register')}}">Register</a>
+            <a class="nav-item nav-link mynav" href="{{route('login')}}">Login</a>
 
             @endif
 
             @if(Auth::guard('admin')->check())
             <div class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <a id="navbarDropdown" class="nav-link dropdown-toggle mynav" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::guard('admin')->user()->name }} <span class="caret"></span></a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

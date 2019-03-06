@@ -25,7 +25,13 @@ Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout
 
 Route::get('/events', 'FrontController@showEvents')->name('events');
 Route::get('/shop', 'FrontController@showShop')->name('shop');
-Route::get('/partners', 'FrontController@showPartners')->name('partners');
+Route::get('/event/{id}', 'FrontController@showOneEvent')->where(['id' => '[0-9]+']);
+Route::get('/product/{id}', 'FrontController@showOneProduct')->where(['id' => '[0-9]+']);
+
+
+route::get('/adhesion', function() {
+    return view('front.adhesion');
+});
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('header')
 <div id='slider'>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade animated fadeInRight"
+        <div id="carouselExampleFade" class="carousel slide carousel-fade"
             data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -9,17 +9,21 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                @foreach($events as $event)
+                
                 <div class="carousel-item active">
-                    <img src="{{asset('images/'.$event->pictureEvent->url_img_event)}}" class="d-block " alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2>Évènements</h2>
-                        <p>{{$event->titre}}</p>
-                        <p>{{$event->category->titre}}</p>
-                    </div>
+                    <img src="{{asset('assets/excursion.jpg')}} "class="d-block " alt="...">
+                    <div class='cartouche animated fadeInRight'>TEST CARTOUCHE</div>
                 </div>
-                @endforeach
-                @foreach($products as $product)
+                <div class="carousel-item">
+                        <img src="{{asset('assets/expoaaltoalvaro.jpg')}} "class="d-block " alt="...">
+                        <div class='cartouche animated fadeInRight'>TEST CARTOUCHE</div>
+                    </div>
+                    <div class="carousel-item">
+                            <img src="{{asset('assets/friseworkshop.jpg')}} "class="d-block " alt="...">
+                            <div class='cartouche animated fadeInRight'>TEST CARTOUCHE</div>
+                        </div>
+                
+                {{-- @foreach($products as $product)
                 <div class="carousel-item">
                     <img src="{{asset('images/'.$product->pictureProduct->url_img_products)}}" class="d-block " alt="...">
                     <div class="carousel-caption d-none d-md-block">
@@ -28,7 +32,7 @@
                         <p>{{$product->prix}} €</p>
                     </div>
                 </div>
-                @endforeach
+                @endforeach --}}
                 {{-- <div class="carousel-item">
                     <img src="" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
@@ -37,14 +41,14 @@
                     </div>
                 </div> --}}
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            {{-- <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </a> --}}
         </div>
       </div>
     @endsection
@@ -123,7 +127,7 @@
         
         <div class='col-12 hideL animated '>
                 
-                <h2 id='partners'><a href='{{route('partners')}}'>TOUS LES PARTENAIRES</a></h2>
+                {{-- <h2 id='partners'><a href='{{route('partners')}}'>TOUS LES PARTENAIRES</a></h2> --}}
                 
                 <ul class="list-group">
                 @forelse($partners as $partner)

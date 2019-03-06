@@ -8,6 +8,7 @@ use App\Category;
 use App\Product;
 use App\Partner;
 Use Newsletter;
+use DB;
 
 
 class FrontController extends Controller
@@ -28,6 +29,7 @@ class FrontController extends Controller
         $events = Event::published()->paginate($this->paginate); // pagination
         $products = Product::published()->paginate($this->paginate);
         $partners = Partner::paginate($this->paginate);
+        // $categories = Category::find($id);
 
         return view('front.index', ['events' => $events, 'products' => $products, 'partners' => $partners]);
 
@@ -35,9 +37,14 @@ class FrontController extends Controller
     //Vue de tous les évènements
     public function showEvents(){
 
-        $events = Event::published()->paginate(5);
+        $events = Event::published()->paginate(1);
+        $expos = Event::where('id',1)->get();
+        $workshops = Event::where('id', 2)->get();
+        $excursions = Event::where('id', 3)->get();
+        $soirees = Event::where('id', 4)->get();
+      
 
-        return view('front.events', ['events' => $events]);
+        return view('front.events', ['events' => $events, 'expos' => $expos, 'workshops' => $workshops, 'excursions' => $excursions, 'soirees' => $soirees]);
     }
     //Vue du shop
     public function showShop(){
@@ -47,13 +54,21 @@ class FrontController extends Controller
 
         return view('front.shop', ['products' => $products]);
     }
-    //Vue des partenaires
-    public function showPartners(){
-        
-        $partners = Partner::paginate(5);
-        
+    public function showOneEvent(int $id){
 
-        return view('front.partners', ['partners' => $partners]);
+        
+        $events = Event::find($id);
+
+        
+        return view('front.show-event', ['events' => $events]);
+    }
+    public function showOneProduct(int $id){
+
+        
+        $events = Product::find($id);
+
+        
+        return view('front.show-product', ['events' => $events]);
     }
     //NewsLetter MailChimp
     public function newsLetter (Request $request) {
