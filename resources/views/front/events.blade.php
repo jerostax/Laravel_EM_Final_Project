@@ -13,6 +13,7 @@
                   <h5 class="card-title">{{$expo->titre}}</h5>
                   <p class="card-text"><small class="text-muted">Status : {{$expo->status}} </small></p>
                   <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$expo->prix}} €</small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix Adhérent: {{$expo->promo}} €</small></p>
                 </div>
           </a></div>
         @endforeach
@@ -25,6 +26,7 @@
                   <h5 class="card-title">{{$workshop->titre}}</h5>
                   <p class="card-text"><small class="text-muted">Status : {{$workshop->status}} </small></p>
                   <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$workshop->prix}} €</small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix Adhérent: {{$workshop->promo}} €</small></p>
                 </div>
           </a></div>
         @endforeach
@@ -37,6 +39,7 @@
                   <h5 class="card-title">{{$excursion->titre}}</h5>
                   <p class="card-text"><small class="text-muted">Status : {{$excursion->status}} </small></p>
                   <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$excursion->prix}} €</small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix Adhérent: {{$excursion->promo}} €</small></p>
                 </div>
           </a></div>
         @endforeach
@@ -49,6 +52,7 @@
                   <h5 class="card-title">{{$soiree->titre}}</h5>
                   <p class="card-text"><small class="text-muted">Status : {{$soiree->status}} </small></p>
                   <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$soiree->prix}} €</small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix Adhérent: {{$soiree->promo}} €</small></p>
                 </div>
           </a></div>
         @endforeach

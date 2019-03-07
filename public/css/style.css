@@ -38,7 +38,7 @@ a:hover {
     transition: 0.7s;
 }
 .navbar-light .navbar-nav .nav-link:hover {
-    color:rgba(255,49,23,0.7);
+    color:rgba(255,49,23,0.9);
 }
 .mynav {
     margin-right:0.5em;
@@ -56,7 +56,7 @@ a:hover {
     transition: 0.7s;
 }
 .dropdown-item:hover {
-    color:rgba(255,49,23,0.7);
+    color:rgba(255,49,23,0.9);
 }
 #logo {
     margin-right:0;
@@ -65,6 +65,9 @@ a:hover {
 }
 #logo > img {
     width: 100%;
+}
+.admin > #navbarDropdown {
+    color:rgba(255,49,23,0.9);
 }
 /*-----SLIDER - INDEX VIEW-----*/
 
@@ -146,6 +149,7 @@ a:hover {
     font-size: 2em;
     font-weight: 900;
     margin-bottom:1.5em;
+    color:#767DCA;
 }
 .slogan > .sl-3 {
     text-align: center;
@@ -202,20 +206,20 @@ a:hover {
     padding-bottom: 1em;
 }
 /*----- EVENT VIEW -----*/
-.event-view > .col-5{
+.event-view > .col-lg-5{
     margin-top: 2em;
     margin-bottom: 2em;
-    margin-left: 2em;
+    margin-left: 4em;
     margin-right: 2em;
 
 }
-.event-view > .col-5 > a {
+.event-view > .col-lg-5 > a {
     color:#2631ab;
     transition: 0.7s;
 }
-.event-view > .col-5 > a:hover {
+.event-view > .col-lg-5 > a:hover {
     text-decoration: none;
-    color:rgba(255,49,23); 
+    color:rgba(255,49,23,0.8); 
 }
 /*----- PRODUCT VIEW -----*/
 .product-view {
@@ -266,6 +270,9 @@ footer {
 /*---------- BACK VIEWS ----------*/
 
 /*-----BACK INDEX VIEW -----*/
+#dashboard {
+    height: 600px;
+}
 #dash-nav {
     margin-top:2.5em;
     max-width: 15em;
@@ -274,22 +281,29 @@ footer {
     margin-left: 2em;
     padding-top: 2em;
     padding-bottom: 2em;
-    background-color: #3A4652;
+    background-color:rgba(255,49,23,0.8);
     border: 1px solid transparent;
     border-radius: 0.5em;
+    height: 500px;
     
 }
 #dash-title {
+    
     font-weight: bold;
+    color:#2631ab;
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color: grey;
+    background-color:#2631ab;
+    opacity: 0.9;
 }
 #v-pills-tab > a {
     padding-top:1em;
     padding-bottom: 1em;
     margin-top: 1em;
     color:white;
+}
+.tab-pane {
+    margin-top:3em;
 }
 .dash-list {
     margin-top: 2.5em;

@@ -12,7 +12,7 @@ class PartnerTableSeeder extends Seeder
     public function run()
     {
         //Création de 10 partenaires à partir de la factory
-        factory(App\Partner::class, 10)->create()->each(function($partner){
+        factory(App\Partner::class, 3)->create()->each(function($partner){
 
             //Ajout des images
             $link = str_random(12).'.jpg'; // hash de lien pour la sécurité (injection de scripts de protection)

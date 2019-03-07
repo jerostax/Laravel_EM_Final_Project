@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('dashboard-nav')
-<div class="row">
+<div class="row" id='dashboard'>
     <div id='dash-nav'class="col-3">
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <h2 id='dash-title'>Dashboard</h2>
@@ -22,6 +22,8 @@
                                     <th>Nom</th>
                                     <th>Catégorie</th>
                                     <th>Prix</th>
+                                    <th>Promo</th>
+                                    <th>Date</th>
                                     <th>Status</th>
                                     <th>Mettre à jour</th>
                                     <th>Supprimer</th>
@@ -33,6 +35,8 @@
                                     <td><a href="">{{$event->titre}}</a></td>
                                     <td>{{$event->category->titre}}</td>
                                     <td>{{$event->prix}} €</td>
+                                    <td>{{$event->promo}} €</td>
+                                    <td>{{$event->date}}</td>
                                     <td > @if($event->status == 'Publié')
                                             <span style='color:green'>Publié</span>
                                             @else 
