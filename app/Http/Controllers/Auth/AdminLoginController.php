@@ -23,7 +23,7 @@ class AdminLoginController extends Controller
     //Tentatives de connexion 
     if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
             //Si authentication réussie
-            return redirect('/admin');
+            return redirect('/admin/event');
             // ->intended(route('admin'));
         }
             //Si authentification échoue

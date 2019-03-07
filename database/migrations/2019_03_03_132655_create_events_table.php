@@ -18,6 +18,8 @@ class CreateEventsTable extends Migration
             $table->string('titre', 100);
             $table->text('description');
             $table->decimal('prix', 6, 2);
+            $table->decimal('promo', 6,2);
+            $table->text('form');
             $table->dateTime('date');
             $table->enum('status', ['Publié', 'Brouillon']);
             $table->timestamps();

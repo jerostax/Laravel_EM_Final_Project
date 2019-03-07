@@ -8,6 +8,7 @@ $factory->define(App\Event::class, function (Faker $faker) {
         'description' => $faker -> paragraph(),
         'prix' => $faker -> randomDigit(),
         'date' => $faker -> dateTime(),
+        'form' => $faker -> word('formulaire'),
         'status' => $faker -> numberBetween($min = 1, $max = 2)
     ];
 });

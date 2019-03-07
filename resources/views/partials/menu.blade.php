@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light  sticky-top animated fadeInDown">
-        <a class="navbar-brand" href="{{route('home')}}">Fluid</a>
+        <a class="navbar-brand" id='logo' href="{{route('home')}}"><img src='{{asset('assets/LOGbleu.jpg')}}'></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+          <div class="navbar-nav .nav-tabs"role="tablist">
               
-            <a class="nav-item nav-link mynav" href="{{route('home')}}">Accueil</a>
+            <a class="nav-item nav-link  mynav" href="{{route('home')}}" >Accueil</a>
             
            
-            <a class="nav-item nav-link mynav" href="{{route('events')}}">Bouge ton fluid</a>
-            <a class="nav-item nav-link mynav" href="{{url('/adhesion')}}">Adhérer au collectif</a>
+            <a class="nav-item nav-link mynav" href="{{route('events')}}" ">Bouge ton fluid</a>
+            <a class="nav-item nav-link mynav" href="{{url('/adhesion')}}" ">Adhérer au collectif</a>
             <a class="nav-item nav-link mynav" href="{{route('shop')}}">Shop</a>
             <a class="nav-item nav-link mynav" href=""><i class="fas fa-search"></i></a>
             
@@ -51,7 +51,7 @@
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href='{{route('home')}}'>Site Fluid</a>
-                <a class="dropdown-item" href='{{route('admin.dashboard')}}'>Dashboard</a>
+                <a class="dropdown-item" href='{{url('admin/event')}}'>Dashboard</a>
                 <a class="dropdown-item" href="{{ route('admin.logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">

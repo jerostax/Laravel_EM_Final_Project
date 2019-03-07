@@ -18,16 +18,13 @@
     @yield('header')
     @yield('dashboard-nav')
 <div class="container">
-
-    <div class="row">
-    <div class="col-md-12">
-        @yield('content')
-    </div>
-    </div>
+   
     
-               
+        @yield('content')
+    
             
 </div>
+
 @include('partials.footer')
 @section('scripts')
 <script src="{{asset('js/app.js')}}"></script>

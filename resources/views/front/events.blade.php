@@ -2,39 +2,55 @@
 @section('content')
 <h1>PAGE EVENT</h1>
 
-{{-- @foreach($events as $event)
-@foreach($categories as $category)
+<div class='row event-view'>
+        
+        @foreach($expos as $expo)
+        
+        <div class="card col-sm-12 col-lg-5 animated fadeInLeft"><a href="{{url('event', $expo->id)}}">
+                <h2>Éxposition</h2>
+                <img src="{{asset('images/'.$expo->pictureEvent->url_img_event)}}" class="card-img-top" alt="{{$expo->titre}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{$expo->titre}}</h5>
+                  <p class="card-text"><small class="text-muted">Status : {{$expo->status}} </small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$expo->prix}} €</small></p>
+                </div>
+          </a></div>
+        @endforeach
 
-<p>{{$category->titre}}</p>
-<a href='{{url('event', $event->id)}}'>{{$event->titre}}</a>
-<p>{{$event->description}}</p>
-@endforeach
-@endforeach --}}
-<div class='col-12'>
-@foreach($expos as $expo)
-<h2>Expositions</h2>
-<a href="{{url('event', $expo->id)}}">{{$expo->titre}}</a>
-@endforeach
-</div>
+        @foreach($workshops as $workshop)
+        <div class="card col-sm-12 col-lg-5 animated fadeInRight"><a href="{{url('event', $workshop->id)}}">
+                <h2>WorkShop</h2>
+                <img src="{{asset('images/'.$workshop->pictureEvent->url_img_event)}}" class="card-img-top" alt="{{$workshop->titre}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{$workshop->titre}}</h5>
+                  <p class="card-text"><small class="text-muted">Status : {{$workshop->status}} </small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$workshop->prix}} €</small></p>
+                </div>
+          </a></div>
+        @endforeach
 
-<div class='col-12'>
-@foreach($workshops as $workshop)
-<h2>Workshops</h2>
-<a href="{{url('event', $workshop->id)}}">{{$workshop->titre}}</a>
-@endforeach
-</div>
+        @foreach($excursions as $excursion)
+        <div class="card col-sm-12 col-lg-5 animated fadeInDown"><a href="{{url('event', $excursion->id)}}">
+                <h2>Éxcursion</h2>
+                <img src="{{asset('images/'.$excursion->pictureEvent->url_img_event)}}" class="card-img-top" alt="{{$excursion->titre}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{$excursion->titre}}</h5>
+                  <p class="card-text"><small class="text-muted">Status : {{$excursion->status}} </small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$excursion->prix}} €</small></p>
+                </div>
+          </a></div>
+        @endforeach
 
-<div class='col-12'>
-@foreach($excursions as $excursion)
-<h2>Excursions</h2>
-<a href="{{url('event', $excursion->id)}}">{{$excursion->titre}}</a>
-@endforeach
-</div>
-
-<div class='col-12'>
-@foreach($soirees as $soiree)
-<h2>Soirée</h2>
-<a href="{{url('event', $soiree->id)}}">{{$soiree->titre}}</a>
-@endforeach
+        @foreach($soirees as $soiree)
+        <div class="card col-sm-12 col-lg-5 animated fadeInDown"><a href="{{url('event', $soiree->id)}}">
+                <h2>Soirée</h2>
+                <img src="{{asset('images/'.$soiree->pictureEvent->url_img_event)}}" class="card-img-top" alt="{{$soiree->titre}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{$soiree->titre}}</h5>
+                  <p class="card-text"><small class="text-muted">Status : {{$soiree->status}} </small></p>
+                  <p class="card-text"><small class="text-muted" style='font-weight:bold'>Prix : {{$soiree->prix}} €</small></p>
+                </div>
+          </a></div>
+        @endforeach
 </div>
 @endsection

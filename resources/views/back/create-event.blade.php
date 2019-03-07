@@ -1,0 +1,76 @@
+@extends('layouts.master')
+
+@section('content')   
+        <div class="row" id='create-event'>
+            <div class="col-md-6">
+                <h1>Créer un Évènement :  </h1>
+                <form action="{{route('event.store')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <div class="form">
+                            
+                        <div class="form-group">
+                            <label for="titre">Titre :</label>
+                            <input type="text" name="titre" value="{{old('titre')}}" class="form-control" id="titre"
+                                   placeholder="Titre de l'Évènement">
+                            @if($errors->has('titre')) <span class="error bg-warning text-warning">{{$errors->first('titre')}}</span>@endif
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Déscription :</label>
+                            <textarea type="text" name="description"class="form-control" placeholder="Déscription de l'Évènement">{{old('description')}}</textarea>
+                            @if($errors->has('description')) <span class="error bg-warning text-warning">{{$errors->first('description')}}</span> @endif
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleFormControlInput1">Prix</label>
+                                <input name="prix" value="{{old('prix')}}"type="text" class="form-control" id="exampleFormControlInput1" placeholder="Prix">
+                                @if($errors->has('prix')) <span class="error bg-warning ">{{$errors->first('prix')}}</span>@endif
+                            </div>
+                            <div class="form-group">
+                                    <label for="exampleFormControlInput1">Prix Adhérent</label>
+                                    <input name="promo" value="{{old('promo')}}"type="text" class="form-control" id="exampleFormControlInput1" placeholder="Prix">
+                                    @if($errors->has('promo')) <span class="error bg-warning ">{{$errors->first('promo')}}</span>@endif
+                                </div>
+                            <div class="form-group">
+                                    <label for="exampleFormControlInput1">Date</label>
+                                    <input name="date" value="{{old('date')}}"type="datetime-local" class="form-control" id="exampleFormControlInput1" placeholder="Date">
+                                    @if($errors->has('date')) <span class="error bg-warning ">{{$errors->first('date')}}</span>@endif
+                                </div>
+                    </div>
+                    
+                    
+            </div><!-- #end col md 6 -->
+
+            <div class="col-md-6 create-right">
+                    <div class="form-group">
+                            <label for="form">Billeterie :</label>
+                            <textarea type="text" name="form"class="form-control" placeholder="Déscription de l'Évènement">{{old('form')}}</textarea>
+                            @if($errors->has('form')) <span class="error bg-warning text-warning">{{$errors->first('form')}}</span> @endif
+                        </div>
+                <div class="input-radio">
+            <h2>Status</h2>
+            <input type="radio" @if(old('status')=='Publié') checked @endif name="status" value="published" checked> Publier<br>
+            <input type="radio" @if(old('status')=='Brouillon') checked @endif name="status" value="unpublished" > Brouillon<br>
+            </div>
+            <div class="input-file">
+                <h2>Image :</h2>
+                <input class="file" type="file" name="picture" >
+                @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
+            </div>
+            <div class="form-select">
+                    <label for="categories">Catégorie :</label>
+                    <select id="categories" name="categories_id">
+                        <option value="0" {{ is_null(old('categories_id'))? 'selected' : '' }} >Pas de categories</option>
+                        @foreach($categories as $id => $titre)
+                            <option {{ old('categories_id')==$id? 'selected' : '' }} value="{{$id}}">{{$titre}}</option>
+                        @endforeach
+                    </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ajouter un Évènement</button>
+            
+            </div>
+            <!-- #end col md 6 -->
+            
+            </form>
+        </div>
+@endsection

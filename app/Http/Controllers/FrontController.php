@@ -29,9 +29,13 @@ class FrontController extends Controller
         $events = Event::published()->paginate($this->paginate); // pagination
         $products = Product::published()->paginate($this->paginate);
         $partners = Partner::paginate($this->paginate);
-        // $categories = Category::find($id);
+        $expos = Event::where('id',1)->get();
+        $workshops = Event::where('id', 2)->get();
+        $excursions = Event::where('id', 3)->get();
+        $soirees = Event::where('id', 4)->get();
+       
 
-        return view('front.index', ['events' => $events, 'products' => $products, 'partners' => $partners]);
+        return view('front.index', ['events' => $events, 'products' => $products, 'partners' => $partners, 'expos' => $expos, 'workshops' => $workshops, 'excursions' => $excursions, 'soirees' => $soirees]);
 
     }
     //Vue de tous les évènements
@@ -49,7 +53,7 @@ class FrontController extends Controller
     //Vue du shop
     public function showShop(){
         
-        $products = Product::published()->paginate(5);
+        $products = Product::published()->paginate(6);
         
 
         return view('front.shop', ['products' => $products]);
@@ -65,10 +69,10 @@ class FrontController extends Controller
     public function showOneProduct(int $id){
 
         
-        $events = Product::find($id);
+        $products = Product::find($id);
 
         
-        return view('front.show-product', ['events' => $events]);
+        return view('front.show-product', ['products' => $products]);
     }
     //NewsLetter MailChimp
     public function newsLetter (Request $request) {
