@@ -9,8 +9,8 @@
             <a class="nav-item nav-link  mynav" href="{{route('home')}}" >Accueil</a>
             
            
-            <a class="nav-item nav-link mynav" href="{{route('events')}}" ">Bouge ton fluid</a>
-            <a class="nav-item nav-link mynav" href="{{url('/adhesion')}}" ">Adhérer au collectif</a>
+            <a class="nav-item nav-link mynav" href="{{route('events')}}" ">Bouge ton FLUID</a>
+            <a class="nav-item nav-link mynav" href="{{url('/adhesion')}}" ">Rejoins le FLUID</a>
             <a class="nav-item nav-link mynav" href="{{route('shop')}}">Shop</a>
             <a class="nav-item nav-link mynav" href=""><i class="fas fa-search"></i></a>
             
@@ -65,6 +65,11 @@
             </div>
           </div>
             @endif
+            <div class='row' id='nav-sn'>
+            <a class="nav-item nav-link mynav" target="_blank" href="https://www.facebook.com/groups/1797643553621438/"><i class="fab fa-facebook-f"></i></a>
+            <a class="nav-item nav-link mynav" target="_blank" href="https://www.instagram.com/fluid_flot_graphique/?hl=fr"><i class="fab fa-instagram"></i></a>
+            <a class="nav-item nav-link mynav" target="_blank" href=""><i class="fab fa-pinterest"></i></a>
+            </div>
           </div>
         </div>
       </nav>

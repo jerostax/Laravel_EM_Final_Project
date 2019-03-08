@@ -1,8 +1,19 @@
-
-
+@font-face {
+    font-family:'Futura';
+    src : url('../fonts/FuturaStd-Medium.otf');
+}
+@font-face {
+    font-family:'Rakkas';
+    src : url('../fonts/Rakkas-Regular.ttf');
+}
+@font-face {
+    font-family: 'FuturaStd';
+    src : url('../fonts/FuturaStd-Medium.otf');
+}
 
 body {
     background-color: white;
+    font-family: 'Futura';
 }
 html {
     scroll-behavior: smooth;
@@ -17,24 +28,24 @@ img {
     opacity: 0;
 }
 a {
-    color:#2631ab;
+    color:#0000ff;
     transition: 0.7s;
 }
 a:hover {
     text-decoration: none;
-    color: #2631ab;
+    color: #0000ff;
     opacity: 0.8;
 }
 /*---------- FRONT VIEWS & PARTIALS ----------*/
 
 /*------ MENU VIEW -----*/
 .navbar {
-    text-transform: uppercase;
     font-weight: bold;
     background-color:white;
 }
 .navbar-light .navbar-nav .nav-link{
-    color:#2631ab;
+    font-family: 'Futura';
+    color:#0000ff;
     transition: 0.7s;
 }
 .navbar-light .navbar-nav .nav-link:hover {
@@ -51,7 +62,7 @@ a:hover {
     font-size: 1rem;
 }
 .dropdown-item {
-    color:#2631ab;
+    color:#0000ff;
     font-weight: bold;
     transition: 0.7s;
 }
@@ -68,6 +79,12 @@ a:hover {
 }
 .admin > #navbarDropdown {
     color:rgba(255,49,23,0.9);
+}
+.admin > #navbarDropdown:first-letter{
+    text-transform: uppercase;
+}
+#nav-sn {
+    margin-left: 10em;
 }
 /*-----SLIDER - INDEX VIEW-----*/
 
@@ -94,20 +111,24 @@ a:hover {
     bottom:0px;
     right:0;
     color:white;
+    font-family: 'FuturaStd';
 }
 .cartouche > h3 >a {
     color:white;
     transition: 0.7s;
+    font-family: 'Rakkas';
+    letter-spacing: 0.1em;
 }
 .cartouche > h3 >a:hover {
     text-decoration: none;
-    color: #2631ab;
+    color: #0000ff;
 }
 .cartouche > h2 {
     padding-top:1em;
     text-transform: uppercase;
     margin-left: 2em;
     font-size: 1em;
+    letter-spacing: 0.5em;
 }
 .cartouche > h3 {
     font-weight: bold;
@@ -135,25 +156,17 @@ a:hover {
     background-color:rgba(255,49,23, 0.8);
 }
 #slogan {
-    margin-top:5em;
-    color:#7A80CB;
+    margin-top: 5em;
+    font-family: 'Rakkas';
+    font-weight: bolder;
+    font-size: 1.5em;
+    margin-left: 2em;
+    color: #0000ff;
 }
-.slogan > .sl-1 {
-    font-size: 3em;
-    font-weight: normal;
-    margin-bottom:1.5em;
-    line-height: 0;
-}
-.slogan > .sl-2 {
-    text-align: right;
-    font-size: 2em;
-    font-weight: 900;
-    margin-bottom:1.5em;
-    color:#767DCA;
-}
-.slogan > .sl-3 {
-    text-align: center;
-    font-size: 2em;
+.slogan-img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 50%;
 }
 .poster {
     position:relative;
@@ -161,6 +174,9 @@ a:hover {
     padding-right:0;
     margin-top: 5em;
     margin-bottom: 5em;
+}
+.poster > a > img {
+    height: 400px;
 }
 .info {
     position:absolute;
@@ -179,6 +195,34 @@ a:hover {
     font-weight: bold;
     font-size: 1.5em;
 }
+.join-fluid > .col-lg-3 {
+    /* padding-right: 5em; */
+    margin-right: 4em;
+    margin-left: 2em;
+}
+.join-fluid > .col-lg-3 > span {
+    color:rgb(153,153,153);
+    font-size: 1.5em;
+    line-height: 2em;
+    
+}
+.join-fluid > .col-lg-3> h2 {
+    margin-bottom: 2em;
+    color: #0000ff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-perso {
+    
+    border: 10px solid yellow;
+    padding-top: 1em;
+    padding-bottom : 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
 .social-network {
     font-size: 5em;
     margin-top: 1em;
@@ -189,9 +233,12 @@ a:hover {
 .social-network > a {
     color:black;
 }
+#social-nl {
+    margin-top: 5em;
+}
 /*----- NEWSLETTER -----*/
 #newsletter {
-    background-color:#2631ab;
+    background-color:#0000ff;
     color:white;
     height: 500px;;
 }
@@ -214,7 +261,7 @@ a:hover {
 
 }
 .event-view > .col-lg-5 > a {
-    color:#2631ab;
+    color:#0000ff;
     transition: 0.7s;
 }
 .event-view > .col-lg-5 > a:hover {
@@ -244,13 +291,13 @@ footer {
     margin-left: 6em;
 }
 .btn-primary {
-    background-color:#2631ab;
-    border-color: #2631ab;
+    background-color:#0000ff;
+    border-color: #0000ff;
     transition: 0.7s;
 }
 .btn-primary:hover {
-    background-color:#2631ab;
-    border-color: #2631ab;
+    background-color:#0000ff;
+    border-color: #0000ff;
     opacity: 0.8;
 }
 /*-----ADHESION VIEW -----*/
@@ -290,10 +337,10 @@ footer {
 #dash-title {
     
     font-weight: bold;
-    color:#2631ab;
+    color:#0000ff;
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color:#2631ab;
+    background-color:#0000ff;
     opacity: 0.9;
 }
 #v-pills-tab > a {
@@ -314,4 +361,7 @@ footer {
 #create-event {
     margin-top:5em;
     margin-left: 5em;
+}
+.create-right {
+    margin-top: 3.5em;
 }

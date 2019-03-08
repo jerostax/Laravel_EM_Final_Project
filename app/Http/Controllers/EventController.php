@@ -21,7 +21,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::paginate($this->paginate);
+        $events = Event::publishedEvent()->orderBy('date', 'desc')->paginate($this->paginate);
         $products = Product::paginate($this->paginate);
         $partners = Partner::paginate($this->paginate);
 
@@ -49,20 +49,34 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request, [
             'titre' => 'required',
             'description' => 'required|string',
             'status' => 'in:Publié,Brouillon',
             'prix' => 'required',
-            // // 'date' => "datetime:Y-m-d|nullable",
+            'promo' => 'required',
+             'date' => "date:Y-m-d|nullable",
             'category_id' => 'integer',
-            // 'status' => 'in:Publié,Brouillon',
-            
-            'pictureEvent' => 'image|max:3000',
+            'form' => 'required|string',
+            // 'status' => 'in:Publié,Brouillon', 
+            'picture' => 'image|max:3000', 
         ]);
         $event = Event::create($request->all());
+        
+        $im = $request->file('picture');
+        if (!empty($im)) {
+            
+            $link = $request->file('picture')->store('');
 
-        return redirect()->route('event.index') ;
+            // mettre à jour la table picture pour le lien vers l'image dans la base de données
+            $event->pictureEvent()->create([
+                'url_img_event' => $link,
+                'titre' => 'default'
+            ]);
+        }
+
+        return redirect()->route('event.index')->with('message-success', 'Évènement créé avec succès !');  ;
     }
 
     /**
@@ -111,6 +125,6 @@ class EventController extends Controller
 
         $event->delete();
 
-        return redirect()->route('event.index') ;
+        return redirect()->route('event.index')->with('message-danger', 'Supprimé sans sommation !'); 
     }
 }

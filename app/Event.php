@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    // protected $date = ['date'];
     protected $fillable = [
-        'titre', 'description', 'category_id', 'status', 'prix'
+        'titre', 'description', 'category_id', 'status', 'prix', 'promo', 'date', 'form', 'url_img_event'
     ];
 
     public function setCategoryIdAttribute($value){
@@ -20,7 +21,7 @@ class Event extends Model
         }
 
     }
-    public function scopePublished($query) {
+    public function scopePublishedEvent($query) {
         return $query->where('status', 'Publié');
     }
     public function category(){

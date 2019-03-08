@@ -26,13 +26,14 @@ class FrontController extends Controller
     //Vue page d'acceuil
     public function index(){
 
-        $events = Event::published()->paginate($this->paginate); // pagination
-        $products = Product::published()->paginate($this->paginate);
+        
+        $events = Event::publishedEvent()->paginate($this->paginate); // pagination
+        $products = Product::publishedProduct()->paginate($this->paginate);
         $partners = Partner::paginate($this->paginate);
-        $expos = Event::where('id',1)->get();
-        $workshops = Event::where('id', 2)->get();
-        $excursions = Event::where('id', 3)->get();
-        $soirees = Event::where('id', 4)->get();
+        $expos = Event::where('category_id',1)->publishedEvent()->orderby('date', 'DESC')->first();
+        $workshops = Event::where('category_id', 2)->publishedEvent()->orderby('date', 'DESC')->first();
+        $excursions = Event::where('category_id', 3)->publishedEvent()->orderby('date', 'DESC')->first();
+        $soirees = Event::where('category_id', 4)->publishedEvent()->orderby('date', 'DESC')->first();
        
 
         return view('front.index', ['events' => $events, 'products' => $products, 'partners' => $partners, 'expos' => $expos, 'workshops' => $workshops, 'excursions' => $excursions, 'soirees' => $soirees]);
@@ -41,19 +42,20 @@ class FrontController extends Controller
     //Vue de tous les évènements
     public function showEvents(){
 
-        $events = Event::published()->paginate(1);
-        $expos = Event::where('id',1)->get();
-        $workshops = Event::where('id', 2)->get();
-        $excursions = Event::where('id', 3)->get();
-        $soirees = Event::where('id', 4)->get();
+        $events = Event::publishedEvent()->paginate($this->$paginate);
+        $expos = Event::where('category_id',1)->publishedEvent()->orderby('date', 'DESC')->first();
+        $workshops = Event::where('category_id', 2)->publishedEvent()->orderby('date', 'DESC')->first();
+        $excursions = Event::where('category_id', 3)->publishedEvent()->orderby('date', 'DESC')->first();
+        $soirees = Event::where('category_id', 4)->publishedEvent()->orderby('date', 'DESC')->first();
       
+
 
         return view('front.events', ['events' => $events, 'expos' => $expos, 'workshops' => $workshops, 'excursions' => $excursions, 'soirees' => $soirees]);
     }
     //Vue du shop
     public function showShop(){
         
-        $products = Product::published()->paginate(6);
+        $products = Product::publishedProduct()->paginate(6);
         
 
         return view('front.shop', ['products' => $products]);

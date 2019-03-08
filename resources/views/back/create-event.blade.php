@@ -32,11 +32,12 @@
                                 </div>
                             <div class="form-group">
                                     <label for="exampleFormControlInput1">Date</label>
-                                    <input name="date" value="{{old('date')}}"type="datetime-local" class="form-control" id="exampleFormControlInput1" placeholder="Date">
+                                    
+                                    <input name="date" value="{{old('date')}}"type="date" class="form-control" id="exampleFormControlInput1" placeholder="Date">
                                     @if($errors->has('date')) <span class="error bg-warning ">{{$errors->first('date')}}</span>@endif
                                 </div>
                     </div>
-                    
+                   
                     
             </div><!-- #end col md 6 -->
 
@@ -47,21 +48,21 @@
                             @if($errors->has('form')) <span class="error bg-warning text-warning">{{$errors->first('form')}}</span> @endif
                         </div>
                 <div class="input-radio">
-            <h2>Status</h2>
-            <input type="radio" @if(old('status')=='Publié') checked @endif name="status" value="published" checked> Publier<br>
-            <input type="radio" @if(old('status')=='Brouillon') checked @endif name="status" value="unpublished" > Brouillon<br>
+            <p>Status :</p>
+            <input type="radio" @if(old('status')=='Publié') checked @endif name="status" value="Publié" checked> Publier<br>
+            <input type="radio" @if(old('status')=='Brouillon') checked @endif name="status" value="Brouillon" > Brouillon<br>
             </div>
             <div class="input-file">
-                <h2>Image :</h2>
+                <p>Image :</p>
                 <input class="file" type="file" name="picture" >
                 @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
             </div>
             <div class="form-select">
-                    <label for="categories">Catégorie :</label>
-                    <select id="categories" name="categories_id">
-                        <option value="0" {{ is_null(old('categories_id'))? 'selected' : '' }} >Pas de categories</option>
+                    <label for="category">Catégorie :</label>
+                    <select id="category" name="category_id">
+                        <option value="0" {{ is_null(old('category_id'))? 'selected' : '' }} >Pas de categories</option>
                         @foreach($categories as $id => $titre)
-                            <option {{ old('categories_id')==$id? 'selected' : '' }} value="{{$id}}">{{$titre}}</option>
+                            <option {{ old('category_id')==$id? 'selected' : '' }} value="{{$id}}">{{$titre}}</option>
                         @endforeach
                     </select>
                     </div>

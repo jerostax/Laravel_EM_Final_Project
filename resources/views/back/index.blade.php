@@ -12,7 +12,7 @@
     
     <div class="col-9">
       <div class="tab-content" id="v-pills-tabContent">
-            
+        @include('back.partials.flash')
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <p><a href="{{route('event.create')}}"><button type="button" class="btn btn-primary btn-lg">Ajouter un Évènement</button></a></p>
                 {{$events->links()}}
@@ -37,6 +37,9 @@
                                     <td>{{$event->prix}} €</td>
                                     <td>{{$event->promo}} €</td>
                                     <td>{{$event->date}}</td>
+                                  
+                                    
+                                    
                                     <td > @if($event->status == 'Publié')
                                             <span style='color:green'>Publié</span>
                                             @else 
@@ -123,4 +126,8 @@
     </div>
   </div>
  
+@endsection
+@section('scripts')
+    @parent
+    <script src="{{asset('js/confirm.js')}}"></script>
 @endsection
