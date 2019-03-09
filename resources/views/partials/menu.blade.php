@@ -1,17 +1,18 @@
+
 <nav class="navbar navbar-expand-lg navbar-light  sticky-top animated fadeInDown">
-        <a class="navbar-brand" id='logo' href="{{route('home')}}"><img src='{{asset('assets/LOGbleu.jpg')}}'></a>
+        <a class="navbar-brand logo"  href="{{route('home')}}"><img class='logo' src='{{asset('assets/LOGbleu.jpg')}}'></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav .nav-tabs"role="tablist">
               
-            <a class="nav-item nav-link  mynav" href="{{route('home')}}" >Accueil</a>
+          <a class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }} mynav" href="{{route('home')}}" >Accueil</a>
             
            
-            <a class="nav-item nav-link mynav" href="{{route('events')}}" ">Bouge ton FLUID</a>
-            <a class="nav-item nav-link mynav" href="{{url('/adhesion')}}" ">Rejoins le FLUID</a>
-            <a class="nav-item nav-link mynav" href="{{route('shop')}}">Shop</a>
+            <a class="nav-item nav-link mynav {{ request()->is('events') ? 'active' : '' }}" href="{{route('events')}}" >Bouge ton FLUID</a>
+            <a class="nav-item nav-link mynav {{ request()->is('adhesion') ? 'active' : '' }}" href="{{url('/adhesion')}}">Rejoins le FLUID</a>
+            <a class="nav-item nav-link mynav {{ request()->is('shop') ? 'active' : '' }}" href="{{route('shop')}}">Shop</a>
             <a class="nav-item nav-link mynav" href=""><i class="fas fa-search"></i></a>
             
             @if(Auth::guard('web')->check())

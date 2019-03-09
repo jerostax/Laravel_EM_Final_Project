@@ -21,7 +21,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::publishedEvent()->orderBy('date', 'desc')->paginate($this->paginate);
+        $events = Event::orderBy('date', 'desc')->paginate($this->paginate);
         $products = Product::paginate($this->paginate);
         $partners = Partner::paginate($this->paginate);
 
@@ -59,7 +59,6 @@ class EventController extends Controller
              'date' => "date:Y-m-d|nullable",
             'category_id' => 'integer',
             'form' => 'required|string',
-            // 'status' => 'in:Publié,Brouillon', 
             'picture' => 'image|max:3000', 
         ]);
         $event = Event::create($request->all());
@@ -87,7 +86,9 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::find($id);
+
+         return view('back.show-event', ['event' => $event]);
     }
 
     /**
@@ -98,7 +99,12 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::find($id);
+
+      
+        $categories = Category::pluck('titre', 'id')->all();
+
+        return view('back.edit-event', compact('event', 'categories'));
     }
 
     /**
@@ -110,7 +116,44 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'titre' => 'required',
+            'description' => 'required|string',
+            'status' => 'in:Publié,Brouillon',
+            'prix' => 'required',
+            'promo' => 'required',
+             'date' => "date:Y-m-d|nullable",
+            'category_id' => 'integer',
+            'form' => 'required|string',
+            'picture' => 'image|max:3000',
+        ]);
+        $event = Event::find($id); // associé les fillables
+
+        $event->update($request->all());
+        
+        // image
+        $im = $request->file('picture');
+        
+        // si on associe une image à un event 
+        if (!empty($im)) {
+
+            $link = $request->file('picture')->store('');
+
+            // suppression de l'image si elle existe 
+            if(count($event->pictureEvent)>0){
+                Storage::disk('local')->delete($event->pictureEvent->url_img_event); // supprimer physiquement l'image
+                $event->pictureEvent()->delete(); // supprimer l'information en base de données
+            }
+
+            // mettre à jour la table picture pour le lien vers l'image dans la base de données
+            $event->pictureEvent()->create([
+                'url_img_event' => $link,
+                'titre' => 'default'
+            ]);
+            
+        }
+
+        return redirect()->route('event.index')->with('message-success', 'Évènement édité avec succès !');
     }
 
     /**

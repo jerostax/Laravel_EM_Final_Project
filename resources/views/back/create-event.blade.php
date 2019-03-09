@@ -12,13 +12,13 @@
                             <label for="titre">Titre :</label>
                             <input type="text" name="titre" value="{{old('titre')}}" class="form-control" id="titre"
                                    placeholder="Titre de l'Évènement">
-                            @if($errors->has('titre')) <span class="error bg-warning text-warning">{{$errors->first('titre')}}</span>@endif
+                            @if($errors->has('titre')) <span class="error bg-warning">{{$errors->first('titre')}}</span>@endif
                         </div>
 
                         <div class="form-group">
                             <label for="description">Déscription :</label>
                             <textarea type="text" name="description"class="form-control" placeholder="Déscription de l'Évènement">{{old('description')}}</textarea>
-                            @if($errors->has('description')) <span class="error bg-warning text-warning">{{$errors->first('description')}}</span> @endif
+                            @if($errors->has('description')) <span class="error bg-warning">{{$errors->first('description')}}</span> @endif
                         </div>
                         <div class="form-group">
                                 <label for="exampleFormControlInput1">Prix</label>
@@ -44,8 +44,8 @@
             <div class="col-md-6 create-right">
                     <div class="form-group">
                             <label for="form">Billeterie :</label>
-                            <textarea type="text" name="form"class="form-control" placeholder="Déscription de l'Évènement">{{old('form')}}</textarea>
-                            @if($errors->has('form')) <span class="error bg-warning text-warning">{{$errors->first('form')}}</span> @endif
+                            <textarea type="text" name="form"class="form-control" placeholder="Lien du formulaire de la billeterie">{{old('form')}}</textarea>
+                            @if($errors->has('form')) <span class="error bg-warning">{{$errors->first('form')}}</span> @endif
                         </div>
                 <div class="input-radio">
             <p>Status :</p>
@@ -55,7 +55,7 @@
             <div class="input-file">
                 <p>Image :</p>
                 <input class="file" type="file" name="picture" >
-                @if($errors->has('picture')) <span class="error bg-warning text-warning">{{$errors->first('picture')}}</span> @endif
+                @if($errors->has('picture')) <span class="error bg-warning">{{$errors->first('picture')}}</span> @endif
             </div>
             <div class="form-select">
                     <label for="category">Catégorie :</label>

@@ -25,6 +25,7 @@
                                     <th>Promo</th>
                                     <th>Date</th>
                                     <th>Status</th>
+                                    <th>Voir</th>
                                     <th>Mettre à jour</th>
                                     <th>Supprimer</th>
                                 </tr>
@@ -32,7 +33,7 @@
                             <tbody>
                                     @foreach($events as $event)
                                     <tr>
-                                    <td><a href="">{{$event->titre}}</a></td>
+                                    <td><a href="{{route('event.show', $event->id)}}">{{$event->titre}}</a></td>
                                     <td>{{$event->category->titre}}</td>
                                     <td>{{$event->prix}} €</td>
                                     <td>{{$event->promo}} €</td>
@@ -45,8 +46,10 @@
                                             @else 
                                             <span style='color:red'>Brouillon</span>
                                             @endif</td>
-                                  
-                                            <td><a class="btn btn-primary" href="">Mettre à jour</a></td>
+                                            <td>
+                                                <a href="{{route('event.show', $event->id)}}"><i class="fas fa-eye"></i></a>
+                                            </td>
+                                            <td><a class="btn btn-primary" href="{{route('event.edit', $event->id)}}">Mettre à jour</a></td>
                                             <td>
                                                     <form class="delete" method="POST" action="{{route('event.destroy', $event->id)}}">
                                                             {{ method_field('DELETE') }}
