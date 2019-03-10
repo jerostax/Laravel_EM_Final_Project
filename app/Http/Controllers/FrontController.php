@@ -43,10 +43,10 @@ class FrontController extends Controller
     public function showEvents(){
 
         $events = Event::publishedEvent()->paginate($this->$paginate);
-        $expos = Event::where('category_id',1)->publishedEvent()->orderby('date', 'DESC')->first();
-        $workshops = Event::where('category_id', 2)->publishedEvent()->orderby('date', 'DESC')->first();
-        $excursions = Event::where('category_id', 3)->publishedEvent()->orderby('date', 'DESC')->first();
-        $soirees = Event::where('category_id', 4)->publishedEvent()->orderby('date', 'DESC')->first();
+        $expos = Event::where('category_id', 1)->publishedEvent()->orderby('date', 'DESC')->get();
+        $workshops = Event::where('category_id', 2)->publishedEvent()->orderby('date', 'DESC')->get();
+        $excursions = Event::where('category_id', 3)->publishedEvent()->orderby('date', 'DESC')->get();
+        $soirees = Event::where('category_id', 4)->publishedEvent()->orderby('date', 'DESC')->get();
       
 
 
@@ -55,7 +55,7 @@ class FrontController extends Controller
     //Vue du shop
     public function showShop(){
         
-        $products = Product::publishedProduct()->paginate(6);
+        $products = Product::publishedProduct()->orderby('created_at', 'DESC')->paginate(6);
         
 
         return view('front.shop', ['products' => $products]);

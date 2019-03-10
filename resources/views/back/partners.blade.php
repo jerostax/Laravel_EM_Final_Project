@@ -1,50 +1,33 @@
 @extends('layouts.master')
 @section('dashboard-nav')
 <div class="row" id='dashboard'>
-    @include('back.menu')
-    
+ @include('back.menu')
     <div class="col-9">
       <div class="tab-content" id="v-pills-tabContent">
         @include('back.partials.flash')
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <p><a href="{{route('event.create')}}"><button type="button" class="btn btn-primary btn-lg">Ajouter un Évènement</button></a></p>
-                {{$events->links()}}
+                <p><a href="{{route('event.create')}}"><button type="button" class="btn btn-primary btn-lg">Ajouter un Partenaire</button></a></p>
+                {{$partners->links()}}
                 <table class="table table-striped dash-list">
                         <thead>
                                 <tr>
                                     <th>Nom</th>
-                                    <th>Catégorie</th>
-                                    <th>Prix</th>
-                                    <th>Promo</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
                                     <th>Voir</th>
                                     <th>Mettre à jour</th>
                                     <th>Supprimer</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                    @foreach($events as $event)
+                                    @foreach($partners as $partner)
                                     <tr>
-                                    <td><a href="{{route('event.show', $event->id)}}">{{$event->titre}}</a></td>
-                                    <td>{{$event->category->titre}}</td>
-                                    <td>{{$event->prix}} €</td>
-                                    <td>{{$event->promo}} €</td>
-                                    <td>{{$event->date->format('d-m-Y')}}</td>
+                                    <td><a href="{{route('partner.show', $partner->id)}}">{{$partner->nom}}</a></td>
                                   
-                                    
-                                    
-                                    <td > @if($event->status == 'Publié')
-                                            <span style='color:green'>Publié</span>
-                                            @else 
-                                            <span style='color:red'>Brouillon</span>
-                                            @endif</td>
                                             <td>
-                                                <a href="{{route('event.show', $event->id)}}"><i class="fas fa-eye"></i></a>
+                                                <a href="{{route('partner.show', $partner->id)}}"><i class="fas fa-eye"></i></a>
                                             </td>
-                                            <td><a class="btn btn-primary" href="{{route('event.edit', $event->id)}}">Mettre à jour</a></td>
+                                            <td><a class="btn btn-primary" href="{{route('partner.edit', $partner->id)}}">Mettre à jour</a></td>
                                             <td>
-                                                    <form class="delete" method="POST" action="{{route('event.destroy', $event->id)}}">
+                                                    <form class="delete" method="POST" action="{{route('partner.destroy', $partner->id)}}">
                                                             {{ method_field('DELETE') }}
                                                             {{ csrf_field() }}
                                                         

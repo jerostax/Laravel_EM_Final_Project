@@ -41,6 +41,8 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::resource('/event', 'EventController')->middleware('auth:admin');
+    Route::resource('/product', 'ProductController')->middleware('auth:admin');
+    Route::resource('/partner', 'PartnersController')->middleware('auth:admin');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     
    

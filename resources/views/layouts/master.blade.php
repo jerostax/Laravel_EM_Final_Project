@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fluid</title>
+    <meta name="keywords" content="fluid, flot, graphique, design, collectif, art, créatif, création, digital, motion, designer, association, exposition, workshop, typographie, monochromie, packaging, sérigraphie" />
+    <meta name="description" content="FLUID est un collectif de curieux de l'image qui cherchent à assouvir leurs envies de culture, leur soif de pratiques artistiques, et leur besoin de rencontres professionnelles." />
+    <title>Site Collectif Fluid</title>
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
@@ -12,7 +14,7 @@
         crossorigin="anonymous">
 </head>
 <body>
-    
+        
 @include('partials.menu')
 
     @yield('header')

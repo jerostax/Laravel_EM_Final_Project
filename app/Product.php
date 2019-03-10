@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $fillable = [
+        'titre', 'description', 'prix','url_img_products'
+    ];
     public function scopePublishedProduct($query) {
         return $query->where('status', 'Publié');
     }

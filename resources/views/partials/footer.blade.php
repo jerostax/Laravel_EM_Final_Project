@@ -1,5 +1,5 @@
 <footer class='row'>
-                <div class="col-lg-3 col-sm-12  footer" id='contact'>
+                <div class="col-lg-3 col-sm-10 col-md-9 footer" id='contact'>
                                 <h1 class="mb-2 text-center">Contactez Nous</h1>
                                 
                                 @if(session('message'))
@@ -45,12 +45,12 @@
                                                 <a target="_blank" href="https://www.instagram.com/fluid_flot_graphique/?hl=fr"><i class="fab fa-instagram"></i></a>
                                                 <a target="_blank" href=""><i class="fab fa-pinterest"></i></a>
                                                 <div id='mention'>
-                                                                <p>outil réalisé par L'ÉCOLE MULTIMÉDIA</p>
+                                                                <p>Site réalisé par <a target='_blank' href='https://www.ecole-multimedia.com/'>L'ÉCOLE MULTIMÉDIA</a></p>
                                                                 <p>Camille Nourtier</p>
                                                                 <p>Estela Sanchez</p>
                                                                 <p>Jérémy Geneste</p>
                                                                 </div>
                                 </div>
                      
-                        
+                                <a href='#' id='arrow' class='animated fadeInLeft'><i class="fas fa-arrow-circle-up"></i></a>                         
 </footer>

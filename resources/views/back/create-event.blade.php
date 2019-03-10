@@ -57,7 +57,7 @@
                 <input class="file" type="file" name="picture" >
                 @if($errors->has('picture')) <span class="error bg-warning">{{$errors->first('picture')}}</span> @endif
             </div>
-            <div class="form-select">
+            <div class="form-select category">
                     <label for="category">Catégorie :</label>
                     <select id="category" name="category_id">
                         <option value="0" {{ is_null(old('category_id'))? 'selected' : '' }} >Pas de categories</option>

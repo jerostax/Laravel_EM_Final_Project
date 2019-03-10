@@ -13,6 +13,7 @@ Use Storage;
 
 class EventController extends Controller
 {
+    
     protected $paginate = 5;
     /**
      * Display a listing of the resource.
@@ -22,10 +23,10 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::orderBy('date', 'desc')->paginate($this->paginate);
-        $products = Product::paginate($this->paginate);
-        $partners = Partner::paginate($this->paginate);
+        // $products = Product::paginate($this->paginate);
+        // $partners = Partner::paginate($this->paginate);
 
-        return view('back.index', ['events' => $events, 'products' => $products, 'partners' => $partners]);
+        return view('back.index', ['events' => $events]);
     }
 
     /**
