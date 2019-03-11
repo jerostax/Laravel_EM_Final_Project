@@ -324,7 +324,7 @@ a:hover {
 }
 .event > h2 {
     font-family: 'Rakkas';
-    color:#0000ff;;
+    color:#0000ff;
     font-weight: bold;
     font-size: 2.5em;
 }
@@ -338,13 +338,29 @@ a:hover {
 .event {
     margin-left: 7em;
 }
+.title {
+    font-family: 'Rakkas';
+    font-size: 4em;
+    color:#0000ff;
+    margin-bottom: 0.5em;
+}
+.paginate-product > .pagination {
+    justify-content: center;
+}
 /*----- PRODUCT VIEW -----*/
 .product-view {
-    margin:0 auto;
-    margin-top: 5em;
-    margin-right: 1em;
-    margin-left: 1em;
+    
+    margin-top: 1em;
+    margin-right: 0em;
+    margin-left: 2.2em;
     margin-bottom: 2em;
+}
+.product-view > a > img {
+    height: 200px;;
+}
+.product-price {
+    font-weight: 900;
+    color: rgba(255,49,23);
 }
 /*----- FOOTER VIEW -----*/
 footer {

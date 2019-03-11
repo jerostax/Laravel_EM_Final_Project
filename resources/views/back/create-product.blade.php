@@ -36,7 +36,11 @@
                             <textarea type="text" name="form"class="form-control" placeholder="Lien du formulaire de la billeterie">{{old('form')}}</textarea>
                             @if($errors->has('form')) <span class="error bg-warning">{{$errors->first('form')}}</span> @endif
                         </div> --}}
-
+                        <div class="input-radio">
+                                <p>Status :</p>
+                                <input type="radio" @if(old('status')=='Publié') checked @endif name="status" value="Publié" checked> Publier<br>
+                                <input type="radio" @if(old('status')=='Brouillon') checked @endif name="status" value="Brouillon" > Brouillon<br>
+                                </div>
             <div class="input-file">
                 <p>Image :</p>
                 <input class="file" type="file" name="picture" >

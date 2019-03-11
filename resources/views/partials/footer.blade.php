@@ -32,7 +32,7 @@
                                         </form>
                                 </div>
                                 <div class='col-lg-5 col-sm-12 footer'>
-                                <img src='{{asset('assets/picto.jpg')}}'>
+                                <img src='{{asset('assets/pictofluidici.png')}}'>
                                         <div id='info-footer'>
                                         <p>Du lundi au vendredi</p>
                                         <p>de 10h à 13h</p>

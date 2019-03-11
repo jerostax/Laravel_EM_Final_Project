@@ -31,11 +31,13 @@
                                             @endif
                                     </td>
                                     <td>
-                                            <a href=""><i class="fas fa-eye"></i></a>
+                                            <a href="{{route('product.show', $product->id)}}"><i class="fas fa-eye"></i></a>
                                     </td>
-                                    <td><a class="btn btn-primary" href="">Mettre à jour</a></td>
+                                    <td><a class="btn btn-primary" href="{{route('product.edit', $product->id)}}">Mettre à jour</a></td>
                                     <td>
-                                            <form class="delete" method="POST" action="">                                                      
+                                            <form class="delete" method="POST" action="{{route('product.destroy', $product->id)}}">     
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}                                                 
                                             <input class="btn btn-danger" type="submit" value="Supprimer" >
                                             </form>
                                     </td>

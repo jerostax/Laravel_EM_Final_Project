@@ -48,6 +48,7 @@ class ProductController extends Controller
             'titre' => 'required',
             'description' => 'required|string',
             'prix' => 'required',
+            'status' => 'in:Publié,Brouillon',
             'picture' => 'image|max:3000', 
         ]);
         $product = Product::create($request->all());
@@ -75,7 +76,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+
+         return view('back.show-product', ['product' => $product]);
     }
 
     /**
@@ -86,7 +89,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('back.edit-product', compact('product'));
     }
 
     /**
@@ -98,7 +103,41 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'titre' => 'required',
+            'description' => 'required|string',
+            'prix' => 'required',
+            'status' => 'in:Publié,Brouillon',
+            'form' => 'required|string',
+            'picture' => 'image|max:3000',
+        ]);
+        $product = Product::find($id); // associé les fillables
+
+        $product->update($request->all());
+        
+        // image
+        $im = $request->file('picture');
+        
+        // si on associe une image à un product 
+        if (!empty($im)) {
+
+            $link = $request->file('picture')->store('');
+
+            // suppression de l'image si elle existe 
+            if(count($product->pictureProduct)>0){
+                Storage::disk('local')->delete($product->pictureProduct->url_img_products); // supprimer physiquement l'image
+                $product->pictureProduct()->delete(); // supprimer l'information en base de données
+            }
+
+            // mettre à jour la table picture pour le lien vers l'image dans la base de données
+            $product->pictureProduct()->create([
+                'url_img_products' => $link,
+                'titre' => 'default'
+            ]);
+            
+        }
+
+        return redirect()->route('product.index')->with('message-success', 'Produit édité avec succès !');
     }
 
     /**
@@ -109,6 +148,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::where('id',$id)->firstOrFail();
+
+        $product->delete();
+
+        return redirect()->route('product.index')->with('message-danger', 'Supprimé sans sommation !'); 
     }
 }

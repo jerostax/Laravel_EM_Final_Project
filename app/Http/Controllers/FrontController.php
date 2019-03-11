@@ -55,7 +55,7 @@ class FrontController extends Controller
     //Vue du shop
     public function showShop(){
         
-        $products = Product::publishedProduct()->orderby('created_at', 'DESC')->paginate(6);
+        $products = Product::publishedProduct()->orderby('created_at', 'DESC')->paginate(5);
         
 
         return view('front.shop', ['products' => $products]);
