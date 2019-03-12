@@ -11,8 +11,8 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        //Création de 10 produits à partir de la factory
-        factory(App\Product::class, 10)->create()->each(function($product){
+        //Création de 1 produit à partir de la factory
+        factory(App\Product::class, 1)->create()->each(function($product){
 
             //Ajout des images
             $link = str_random(12).'.jpg'; // hash de lien pour la sécurité (injection de scripts de protection)

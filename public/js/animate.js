@@ -115,6 +115,10 @@ $(document).ready(function(){
             $('.hideBL').removeClass('hideBL');
         }
         
-   
+        $('.search').click(function(){
+            
+            $('.search-bar').toggle();
+            
+        })
      
 })

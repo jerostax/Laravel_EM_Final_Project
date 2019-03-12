@@ -17,6 +17,7 @@ data-ride="carousel">
                     <h3><a href="{{url('event', $excursions->id)}}">Excursion</a></h3>
                     <p>{{$excursions->description}}</p>
                     <p>Le {{$excursions->date->format('d-m-Y')}}</p>
+                    <img src='{{asset('assets/pictoscroll.png')}}'>
                 </div>
               </div>         
               <div class="carousel-item ">
@@ -26,6 +27,7 @@ data-ride="carousel">
                     <h3><a href="{{url('event', $expos->id)}}">Exposition</a></h3>
                     <p>{{$expos->description}}</p>
                     <p>Le {{$expos->date->format('d-m-Y')}}</p>
+                    <img src='{{asset('assets/pictoscroll.png')}}'>
                         
                 </div>
               </div>            
@@ -36,6 +38,7 @@ data-ride="carousel">
                     <h3><a href="{{url('event', $workshops->id)}}">WorkShop</a></h3>
                     <p>{{$workshops->description}}</p>
                     <p>Le {{$workshops->date->format('d-m-Y')}}</p>
+                    <img src='{{asset('assets/pictoscroll.png')}}'>
                 </div>
               </div>            
             </div>
@@ -191,8 +194,8 @@ data-ride="carousel">
                        </form>
                     </div>                    
          </div>
-         <div class='col-lg-3 col-sm-12  animated hideD'>
-                <video controls poster="{{asset('assets/LOGbleu.jpg')}}" width="500">
+         <div class='col-lg-3 col-sm-12  video animated hideD'>
+                <video controls poster="{{asset('assets/videobouton.jpg')}}" width="500">
                     
                       <source src="{{asset('assets/soireefluid-converted.mp4')}}"
                                 type="video/mp4">

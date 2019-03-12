@@ -45,7 +45,7 @@ a:hover {
     background-color:white;
 }
 
-.navbar-light .navbar-nav .nav-link{
+.navbar-light .navbar-nav .nav-link, .search{
     font-family: 'Futura';
     color:#0000ff;
     transition: 0.7s;
@@ -54,18 +54,19 @@ a:hover {
 .active {
     color:rgba(255,49,23,0.9) !important;
 }
-.navbar-light .navbar-nav .nav-link:hover {
+.navbar-light .navbar-nav .nav-link:hover, .search:hover {
     color:rgba(255,49,23,0.9);
 
 }
 .mynav {
     margin-right:0.5em;
+    
 }
-.navbar-nav > a {
+.navbar-nav > a, .search {
     margin-right: 2em;
 }
 #navbarNavAltMarkup {
-    margin-left:20%;
+    margin-left:15%;
     font-size: 1rem;
 }
 .dropdown-item {
@@ -89,7 +90,7 @@ a:hover {
 .logo > img {
     width: 100%;
 }
-.admin > #navbarDropdown {
+.admin > #navbarDropdown, .user > #navbarDropdown {
     color:rgba(255,49,23,0.9);
 }
 .admin > #navbarDropdown:first-letter{
@@ -99,6 +100,27 @@ a:hover {
     margin-left: 10em;
     font-size: 1.2em;
 }
+.search-bar {
+    display: none;
+    border-radius: 10px;
+    height: 30px;
+    border-color: #0000ff;
+    color:#0000ff;
+    text-align: left;
+}
+.search-bar:hover {
+    background-color: transparent;
+    color:#0000ff;
+    border-color: #0000ff;
+}
+.div-search {
+    margin-top: 0.4em;
+    margin-right: 0.5em;
+}
+.search {
+    margin-top: 0.7em;
+}
+
 /*-----SLIDER - INDEX VIEW-----*/
 
 .carousel-item{
@@ -152,6 +174,12 @@ a:hover {
     margin-top:1em;
     width:70% ;
     margin-left: 2em;
+}
+.cartouche > img {
+    width: 4%;
+    margin-left: 20%;
+    position:absolute;
+    bottom: 1em;
 }
 
 .carousel-indicators {
@@ -263,7 +291,6 @@ a:hover {
     font-size: 1.5em;
 }
 .join-fluid > .col-lg-3 {
-    /* padding-right: 5em; */
     margin-right: 4em;
     margin-left: 2.5em;
 }
@@ -300,12 +327,16 @@ a:hover {
 #video-nl {
     margin-top: 8em;
 }
+.video  {
+  
+}
 /*----- NEWSLETTER -----*/
 #newsletter {
     background-color:#0000ff;
     color:white;
-    height: 500px;;
+    height: 460px;;
     margin-right: 12em;
+    margin-top: 2.8em;
 }
 #newsletter > .card-body > h2 {
     margin-top: 0.5em;
@@ -347,6 +378,42 @@ a:hover {
 .paginate-product > .pagination {
     justify-content: center;
 }
+/*----- SHOW EVENT VIEW -----*/
+.event-desc {
+    margin-top: 2em;
+    text-align: center;
+}
+.one-event {
+    margin-top: 2em;
+    margin-left: 2em;
+}
+.single-title {
+    color: #0000ff;
+    font-family: 'Rakkas';
+    font-size: 4em;
+}
+.event {
+    margin-top: 3em;
+}
+.event-sn > a {
+    font-size: 2em;
+    padding-right: 0;
+}
+.fa-arrow-left {
+    margin-left: 3.5em;
+}
+.event-right {
+    margin-top: 6em;
+    margin-left: 6em;
+}
+.event-desc > p {
+    padding-bottom: 4em;
+    text-align: left;
+    
+}
+.billeterie {
+    margin-top: 20em;
+}
 /*----- PRODUCT VIEW -----*/
 .product-view {
     
@@ -361,6 +428,21 @@ a:hover {
 .product-price {
     font-weight: 900;
     color: rgba(255,49,23);
+}
+
+/*----- SHOW PRODUCT VIEW -----*/
+.show-product {
+    margin-left: 2em;
+}
+.product-left {
+    margin-right: 8em;
+}
+.product-right {
+    margin-top: 5em;
+}
+.product-left > img {
+    margin-bottom: 2em;
+    margin-top: 2em;
 }
 /*----- FOOTER VIEW -----*/
 footer {
@@ -564,5 +646,8 @@ footer {
     video {
         width: 90%;
         margin-left: 2em;
+    }
+    .event {
+        margin-left: 0em;
     }
 }

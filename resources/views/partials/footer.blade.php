@@ -47,7 +47,7 @@
                                                 <div id='mention'>
                                                                 <p>Site réalisé par <a target='_blank' href='https://www.ecole-multimedia.com/'>L'ÉCOLE MULTIMÉDIA</a></p>
                                                                 <p>Camille Nourtier</p>
-                                                                <p>Estela Sanchez</p>
+                                                                <p>Estela Ranchy</p>
                                                                 <p>Jérémy Geneste</p>
                                                                 </div>
                                 </div>

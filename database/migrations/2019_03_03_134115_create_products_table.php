@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('titre', 100);
             $table->text('description');
             $table->decimal('prix', 6, 2);
+            $table->text('form');
             $table->enum('status', ['Publié', 'Brouillon']);
             $table->timestamps();
         });

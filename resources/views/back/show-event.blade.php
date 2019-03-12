@@ -10,7 +10,7 @@
 <p>{{$event->description}}</p>
 <img src="{{asset('images/'.$event->pictureEvent->url_img_event)}}">
 
-<iframe id="haWidget" allowtransparency="true" scrolling="auto" src="{{$event->form}}" style="width:50%;height:600px;border:none;margin-left: 25%;margin-top: 5em;" onload="window.scroll(0, this.offsetTop)"></iframe><div style="width:100%;text-align:center;">Propulsé par <a href="https://www.helloasso.com" rel="nofollow">HelloAsso</a></div>
+<iframe id="haWidget" allowtransparency="true"  src="{{$event->form}}" style="width:100%;height:750px;border:none;" ></iframe><div style="width:100%;text-align:center;">Propulsé par <a href="https://www.helloasso.com" rel="nofollow">HelloAsso</a></div>
 
 @endsection
 

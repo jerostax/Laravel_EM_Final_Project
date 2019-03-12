@@ -31,11 +31,11 @@
             </div><!-- #end col md 6 -->
 
             <div class="col-md-6 create-right">
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                             <label for="form">Formulaire de paiement :</label>
-                            <textarea type="text" name="form"class="form-control" placeholder="Lien du formulaire de la billeterie">{{old('form')}}</textarea>
+                            <textarea type="text" name="form"class="form-control" placeholder="Lien du formulaire de paiement">{{old('form')}}</textarea>
                             @if($errors->has('form')) <span class="error bg-warning">{{$errors->first('form')}}</span> @endif
-                        </div> --}}
+                        </div>
                         <div class="input-radio">
                                 <p>Status :</p>
                                 <input type="radio" @if(old('status')=='Publié') checked @endif name="status" value="Publié" checked> Publier<br>

@@ -28,8 +28,8 @@ class EventTableSeeder extends Seeder
         //Suppresion de toutes les images avant de commencer les seeders
         Storage::disk('local')->delete(Storage::allFiles());
 
-        //Création de 10 évènements à partir de la factory
-        factory(App\Event::class, 10)->create()->each(function($event){
+        //Création de 1 évènement à partir de la factory
+        factory(App\Event::class, 1)->create()->each(function($event){
             //association d'une catégorie à un évenement
             $category = App\Category::find(rand(1,4));
 

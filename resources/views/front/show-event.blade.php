@@ -1,17 +1,35 @@
 @extends('layouts.master')
 
 @section('content')
-<h1>TEST PAGE EVENT</h1>
 
 
-<a href='{{route('events')}}'>retour</a>
 
-<h1>{{$events->titre}}</h1>
-<p>{{$events->description}}</p>
-<img src="{{asset('images/'.$events->pictureEvent->url_img_event)}}">
+<i class="fas fa-arrow-left animated bounceInRight"></i> <a href='{{route('events')}}'>Retour</a>
+<section class='row one-event'>
+    <div class='col-lg-5'>
+        <h1 class='single-title animated fadeInDown'>{{$events->titre}}</h1>
+        <h2 class='animated fadeInUp'>{{$events->category->titre}}</h2>
+        
+        <img class='animated zoomIn'src="{{asset('images/'.$events->pictureEvent->url_img_event)}}">
+    </div>
+    <div class='col-lg-5 event-right'>
+            <h2 class='animated bounceInLeft'>{{$events->category->titre}}</h2>
+            <p class='animated fadeInUp'>Le {{$events->date->format('d-m-Y')}}</p>
+            <div class='row event-sn animated fadeInRight'>
+                    <a class="nav-item nav-link mynav" target="_blank" href="https://www.facebook.com/groups/1797643553621438/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="nav-item nav-link mynav" target="_blank" href="https://www.instagram.com/fluid_flot_graphique/?hl=fr"><i class="fab fa-instagram"></i></a>
+                    <a class="nav-item nav-link mynav" target="_blank" href=""><i class="fab fa-pinterest"></i></a>
+            </div>
+    </div>
+    <div class='col-lg-12 event-desc'>
+        <p>{{$events->description}}</p>
+  
+        <a class='btn-perso btn-fluid'href='#haWidget'>Acheter un Billet</a>
+    </div>
+</section>
+<iframe class='billeterie' id="haWidget" allowtransparency="true"  src="{{$events->form}}" style="width:100%;height:750px;border:none;"  ></iframe><div style="width:100%;text-align:center;">Propulsé par <a href="https://www.helloasso.com" rel="nofollow">HelloAsso</a></div>
 
 
-<iframe id="haWidget" allowtransparency="true" scrolling="auto" src="{{$events->form}}" style="width:50%;height:600px;border:none;margin-left: 25%;margin-top: 5em;" onload="window.scroll(0, this.offsetTop)"></iframe><div style="width:100%;text-align:center;">Propulsé par <a href="https://www.helloasso.com" rel="nofollow">HelloAsso</a></div>
 
 
 @endsection

@@ -7,6 +7,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'titre' => $faker->sentence(),
         'description' => $faker -> paragraph(),
         'prix' => $faker -> randomDigit(),
+        'form' => $faker -> word(),
         'status' => $faker -> numberBetween($min = 1, $max = 2)
     ];
 });

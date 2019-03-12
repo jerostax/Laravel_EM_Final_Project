@@ -49,6 +49,7 @@ class ProductController extends Controller
             'description' => 'required|string',
             'prix' => 'required',
             'status' => 'in:Publié,Brouillon',
+            'form' => 'required|string',
             'picture' => 'image|max:3000', 
         ]);
         $product = Product::create($request->all());

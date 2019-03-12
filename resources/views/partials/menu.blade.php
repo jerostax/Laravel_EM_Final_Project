@@ -13,11 +13,11 @@
             <a class="nav-item nav-link mynav {{ request()->is('events') ? 'active' : '' }}" href="{{route('events')}}" >Bouge ton FLUID</a>
             <a class="nav-item nav-link mynav {{ request()->is('adhesion') ? 'active' : '' }}" href="{{url('/adhesion')}}">Rejoins le FLUID</a>
             <a class="nav-item nav-link mynav {{ request()->is('shop') ? 'active' : '' }}" href="{{route('shop')}}">Shop</a>
-            <a class="nav-item nav-link mynav" href=""><i class="fas fa-search"></i></a>
+           <div class='div-search'><input class='search-bar btn  my-2 my-sm-0' type='text'></div><i class="fas fa-search search"></i>
             
             @if(Auth::guard('web')->check())
             
-            <div class="nav-item dropdown">
+            <div class="nav-item dropdown user">
             <a id="navbarDropdown" class="nav-link dropdown-toggle mynav" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 <i class="fas fa-user"></i>
               
@@ -39,9 +39,15 @@
           </div>
 
             @else 
-
-            <a class="nav-item nav-link mynav" href="{{route('register')}}">S'enregistrer</a>
-            <a class="nav-item nav-link mynav" href="{{route('login')}}">Se connecter</a>
+            <div class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle mynav" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <i class="fas fa-user"></i>
+                    <span class="caret"></span></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{route('register')}}">S'enregistrer</a>
+            <a class="dropdown-item" href="{{route('login')}}">Se connecter</a>
+          </div>
+        </div>
 
             @endif
 
