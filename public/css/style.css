@@ -347,6 +347,35 @@ a:hover {
     text-transform: uppercase;
     padding-bottom: 1em;
 }
+#instafeed {
+    
+    margin-top: 2em;
+    padding-left:0;
+    padding-right:0;
+    margin-left: 5em;   
+}
+#instafeed  > a > img {
+    width: 188px;
+    
+}
+.insta-fluid  {
+    text-align: center;
+    font-size: 4em;
+    color:#0000ff;
+    margin-top: 1em;
+}
+#instafluid > h2{
+    text-transform: uppercase;
+    font-family: 'Rakkas';
+    font-weight: bold;
+    color: #0000ff;
+    margin-top: 1em;
+   text-align: center;  
+}
+#instafeed > a {
+    color: #0000ff;
+    font-weight: bold;   
+}
 /*----- EVENT VIEW -----*/
 .event-view-img {
     width: 80%;
@@ -373,44 +402,13 @@ a:hover {
     font-size: 4em;
     color:#0000ff;
     margin-bottom: 0.5em;
+    margin-left: 0.5em;
 }
 .paginate-product > .pagination {
     justify-content: center;
 }
-#instafeed {
-    
-    margin-top: 2em;
-    padding-left:0;
-    padding-right:0;
-    margin-left: 5em;
-   
-    
-    
-}
-#instafeed  > a > img {
-    width: 188px;
-    
-}
-.insta-fluid  {
-    text-align: center;
-    font-size: 4em;
-    color:#0000ff;
-    margin-top: 1em;
-}
-#instafluid > h2{
-    text-transform: uppercase;
-    font-family: 'Rakkas';
-    font-weight: bold;
-    color: #0000ff;
-    margin-top: 1em;
-   text-align: center;
-
-  
-}
-
-#instafeed > a {
-    color: #0000ff;
-    font-weight: bold;   
+.event-excu > p{
+    padding-left: 0;
 }
 /*----- SHOW EVENT VIEW -----*/
 .event-desc {
@@ -542,6 +540,24 @@ footer {
     font-size: 2em;
   
 }
+.year {
+  
+    margin-right: 1em;
+}
+.mentions {
+    margin-top: 2em;
+    margin-left: 5em;
+    color:grey;
+    word-spacing: 1em;
+    text-transform: uppercase;
+}
+.mentions-2 {
+    margin-left: 19%;
+    word-spacing: 0;
+}
+.mentions-2 > span {
+    margin-right: 15%;
+}
 /*-----ADHESION VIEW -----*/
 #adhesion-view {
     margin-top:5em;
@@ -616,10 +632,20 @@ footer {
 
 #register {
     background-color:white;
-    margin-top:10em;
+    margin-top:5em;
     margin-bottom:10em;
 }
+.form-title {
+    color: #0000ff;
+    font-family: 'Rakkas';
+    font-size: 1.5em;
+}
+/*----- USER LOGIN VIEW -----*/
 
+.user-login {
+    margin-bottom: 10em;
+    margin-top: 5em;
+}
 /*---------- BACK VIEWS ----------*/
 
 /*-----BACK INDEX VIEW -----*/

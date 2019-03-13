@@ -6,7 +6,7 @@ return [
      * The API key of a MailChimp account. You can find yours at
      * https://us10.admin.mailchimp.com/account/api-key-popup/.
      */
-    'apiKey' => 'c2770cb61705a39c7b3b2b953ec7239f-us20',
+    'apiKey' => env('MAILCHIMP_APIKEY'),
 
     /*
      * The listName to use when no listName has been specified in a method.

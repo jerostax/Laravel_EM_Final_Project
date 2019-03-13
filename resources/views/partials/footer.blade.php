@@ -1,4 +1,4 @@
-
+   
 <footer class='row'>
                 <div class="col-lg-3 col-sm-10 col-md-9 footer" id='contact'>
                                 <h1 class="mb-2 text-center">Contactez Nous</h1>
@@ -53,5 +53,10 @@
                                                                 </div>
                                 </div>
                      
-                                <a href='#' id='arrow' class='animated fadeInLeft'><i class="fas fa-arrow-circle-up"></i></a>                         
+                               <div class='row col-lg-12 mentions'>
+                                       <p class='year'></p><p>&copy; fluid</p>
+                                        <p class='mentions-2'><span>mentions légales</span> <span>cgv</span> <span>confidentialité</span> <span>mentions rgpd</span></p>
+                                </div>
+                 
+                       <a href='#' id='arrow' class='animated fadeInLeft'><i class="fas fa-arrow-circle-up"></i></a>                         
 </footer>

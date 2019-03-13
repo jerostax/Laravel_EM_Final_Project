@@ -44,9 +44,9 @@ data-ride="carousel">
             </div>
         </header>     
     @endsection
-@section('content')
 
 <!-- SLOGAN -->
+@section('content')
 <section class='row' id='slogan'>
     <div class='col-lg-4 col-sm-12 animated hideR'>
         <img class='slogan-img' src='{{asset('assets/pictocoeur.jpg')}}' alt='Pictogramme Coeur'>

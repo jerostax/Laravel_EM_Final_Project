@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+    //Change opacité pour affichage du contenu progressif et ajoute une animation
     $(window).scroll( function(){
         $('.hideR').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -12,6 +14,7 @@ $(document).ready(function(){
         }); 
 
     });
+    //Change opacité pour affichage du contenu progressif et ajoute une animation
     $(window).scroll( function(){
         $('.hideL').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -25,6 +28,7 @@ $(document).ready(function(){
         }); 
 
     });
+    //Change opacité pour affichage du contenu progressif et ajoute une animation
     $(window).scroll( function(){
         $('.hideU').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -38,6 +42,7 @@ $(document).ready(function(){
         }); 
 
     });
+    //Change opacité pour affichage du contenu progressif et ajoute une animation
     $(window).scroll( function(){
         $('.hideD').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -51,6 +56,7 @@ $(document).ready(function(){
         }); 
 
     });
+    //Change opacité pour affichage du contenu progressif et ajoute une animation
     $(window).scroll( function(){
         $('.hideZ').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -64,6 +70,7 @@ $(document).ready(function(){
         }); 
 
     });
+    //Change opacité pour affichage du contenu progressif et ajoute une animation
     $(window).scroll( function(){
         $('.hideBL').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -77,6 +84,7 @@ $(document).ready(function(){
         }); 
 
     });
+    //Change opacité pour affichage du contenu progressif et ajoute une animation
     $(window).scroll( function(){
         $('.hideBR').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -90,6 +98,8 @@ $(document).ready(function(){
         }); 
 
     });
+
+    //Réduit la taille du logo quand on est pas au top de la page pour réduire le menu aussi
     $(window).scroll(function(){
 
         var scroll = $(window).scrollTop();
@@ -105,6 +115,7 @@ $(document).ready(function(){
       
       });
       
+        //Retire les animations + opacité on scroll en dessous de 650 px
         if($(window).innerWidth() < 650){
             $('.hideL').removeClass('hideL');
             $('.hideR').removeClass('hideR');
@@ -120,7 +131,9 @@ $(document).ready(function(){
             $('.search-bar').toggle();
             
         })
-        var userFeed = new Instafeed({
+
+        //Flux instagram
+        let userFeed = new Instafeed({
             get: 'user',
             userId: '7983810479',
             accessToken: '7983810479.1677ed0.aaadb05b044548f48aed1794e16533ca',
@@ -130,6 +143,10 @@ $(document).ready(function(){
         });
         userFeed.run();
 
-        
+        //Affiche année en cours en bas du footer
+        let date = new Date();
+        let year = date.getFullYear();
+
+        $('.year').text(year);
      
 })
