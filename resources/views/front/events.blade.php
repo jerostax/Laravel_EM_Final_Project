@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
+<!-- SECTION EXPOSITIONS -->
 <section class='col-lg-12 col-sm-12 event event-expo'>
   <h2 class='animated fadeInRight'>Expositions</h2>
   <p class='animated fadeInLeft'>Des expositions pour assouvir votre soif de connaissance.</p>
@@ -20,6 +21,7 @@
   @endforeach
 </section>
 
+<!-- SECTION WORKSHOPS -->
 <section class='col-lg-12 col-sm-12 event event-work'>
     <h2 class='animated hideR'>Workshops</h2>
     <p class='animated hideL'>Des expositions pour assouvir votre soif de connaissance.</p>
@@ -37,9 +39,10 @@
      </div>
     </div>
     @endforeach
-  </section>
+</section>
 
-  <section class='col-lg-12 col-sm-12 event event-excu'>
+<!-- SECTION EXCURSIONS -->
+<section class='col-lg-12 col-sm-12 event event-excu'>
       <h2 class='animated hideR'>Excursions</h2>
       <p class='animated hideL'>Des expositions pour assouvir votre soif de connaissance.</p>
       <p class='animated hideZ'>Prix négociés avec conférencier ou non pour expositions ou parcours de visite extérieur.</p>
@@ -56,9 +59,10 @@
        </div>
       </div>
       @endforeach
-    </section>
+</section>
 
-    <section class='col-lg-12 col-sm-12 event event-soiree'>
+<!-- SECTION SOIREES -->
+<section class='col-lg-12 col-sm-12 event event-soiree'>
         <h2 class='animated hideR'>Soirées</h2>
         <p class='animated hideL'>Des expositions pour assouvir votre soif de connaissance.</p>
         <p class='animated hideZ'>Prix négociés avec conférencier ou non pour expositions ou parcours de visite extérieur.</p>
@@ -75,5 +79,5 @@
          </div>
         </div>
         @endforeach
-      </section>
+</section>
 @endsection

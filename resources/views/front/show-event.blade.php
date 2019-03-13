@@ -5,11 +5,12 @@
 
 
 <i class="fas fa-arrow-left animated bounceInRight"></i> <a href='{{route('events')}}'>Retour</a>
+
+<!-- SECTION 1 SEUL EVENT -->
 <section class='row one-event'>
     <div class='col-lg-5'>
         <h1 class='single-title animated fadeInDown'>{{$events->titre}}</h1>
         <h2 class='animated fadeInUp'>{{$events->category->titre}}</h2>
-        
         <img class='animated zoomIn'src="{{asset('images/'.$events->pictureEvent->url_img_event)}}">
     </div>
     <div class='col-lg-5 event-right'>
@@ -22,15 +23,14 @@
             </div>
     </div>
     <div class='col-lg-12 event-desc'>
-        <p>{{$events->description}}</p>
-  
+        <p>{{$events->description}}</p>  
         <a class='btn-perso btn-fluid'href='#haWidget'>Acheter un Billet</a>
     </div>
 </section>
+
+<!-- FORMULAIRE DE PAIEMENT -->
+
 <iframe class='billeterie' id="haWidget" allowtransparency="true"  src="{{$events->form}}" style="width:100%;height:750px;border:none;"  ></iframe><div style="width:100%;text-align:center;">Propulsé par <a href="https://www.helloasso.com" rel="nofollow">HelloAsso</a></div>
-
-
-
 
 @endsection
 

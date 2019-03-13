@@ -120,5 +120,16 @@ $(document).ready(function(){
             $('.search-bar').toggle();
             
         })
+        var userFeed = new Instafeed({
+            get: 'user',
+            userId: '7983810479',
+            accessToken: '7983810479.1677ed0.aaadb05b044548f48aed1794e16533ca',
+            limit: '10',
+            template: '<a target="_blank" href="{{link}}"><img src="{{image}}" /></a>'
+            
+        });
+        userFeed.run();
+
+        
      
 })

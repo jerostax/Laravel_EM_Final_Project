@@ -19,8 +19,10 @@ if(version_compare(PHP_VERSION, '7.2.0', '>=')) { error_reporting(E_ALL ^ E_NOTI
 
 Auth::routes();
 
+Route::post('/newsletter', 'NewsletterController@store');   
+
 Route::get('/', 'FrontController@index')->name('home');
-Route::post('/newsletter', 'FrontController@newsLetter');
+
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::get('/events', 'FrontController@showEvents')->name('events');
@@ -33,6 +35,9 @@ Route::post('/contact',  'ContactController@mailToAdmin');
 
 route::get('/adhesion', function() {
     return view('front.adhesion');
+});
+route::get('/collectif', function() {
+    return view('front.collectif');
 });
 
 Route::prefix('admin')->group(function() {

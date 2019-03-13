@@ -7,7 +7,6 @@ use App\Event;
 use App\Category;
 use App\Product;
 use App\Partner;
-Use Newsletter;
 use DB;
 
 
@@ -42,7 +41,7 @@ class FrontController extends Controller
     //Vue de tous les évènements
     public function showEvents(){
 
-        $events = Event::publishedEvent()->paginate($this->$paginate);
+        // $events = Event::publishedEvent()->paginate($this->$paginate);
         $expos = Event::where('category_id', 1)->publishedEvent()->orderby('date', 'DESC')->get();
         $workshops = Event::where('category_id', 2)->publishedEvent()->orderby('date', 'DESC')->get();
         $excursions = Event::where('category_id', 3)->publishedEvent()->orderby('date', 'DESC')->get();
@@ -76,12 +75,5 @@ class FrontController extends Controller
         
         return view('front.show-product', ['products' => $products]);
     }
-    //NewsLetter MailChimp
-    public function newsLetter (Request $request) {
-        if(!Newsletter::isSubscribed($request->email)){
-            Newsletter::subscribePending($request->email);
-            return redirect('/')->with('success', "Vérifiez votre mail pour confirmer l'abonnement!");
-        }
-        return redirect('/')->with('failure', 'désolé vous êtes déjà abonné');
-    }
+ 
 }

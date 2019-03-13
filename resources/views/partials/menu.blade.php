@@ -7,12 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav .nav-tabs"role="tablist">
            
-          <a class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }} mynav" href="{{route('home')}}" >Accueil</a>
+          
             
            
             <a class="nav-item nav-link mynav {{ request()->is('events') ? 'active' : '' }}" href="{{route('events')}}" >Bouge ton FLUID</a>
             <a class="nav-item nav-link mynav {{ request()->is('adhesion') ? 'active' : '' }}" href="{{url('/adhesion')}}">Rejoins le FLUID</a>
             <a class="nav-item nav-link mynav {{ request()->is('shop') ? 'active' : '' }}" href="{{route('shop')}}">Shop</a>
+            <a class="nav-item nav-link mynav" href="#contact" >Contact</a>
            <div class='div-search'><input class='search-bar btn  my-2 my-sm-0' type='text'></div><i class="fas fa-search search"></i>
             
             @if(Auth::guard('web')->check())
@@ -79,4 +80,4 @@
             </div>
           </div>
         </div>
-      </nav>
+</nav>

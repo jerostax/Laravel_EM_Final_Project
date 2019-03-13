@@ -19,16 +19,21 @@
 
     @yield('header')
     @yield('dashboard-nav')
+
 <div class="container">
-   
-    
-        @yield('content')
-    
-            
+        @yield('content')        
+</div>
+
+        @yield('full-page')
+
+<div class="container">
+        @yield('content2')
 </div>
 
 @include('partials.footer')
+
 @section('scripts')
+<script src='https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js'></script>
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/animate.js')}}"></script>
 @show

@@ -2,7 +2,7 @@
 @section('header')
 
 <!-- SLIDER -->
-<div id="carouselExampleFade" class="carousel carousel-fade "
+<header id="carouselExampleFade" class="carousel carousel-fade "
 data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -17,7 +17,7 @@ data-ride="carousel">
                     <h3><a href="{{url('event', $excursions->id)}}">Excursion</a></h3>
                     <p>{{$excursions->description}}</p>
                     <p>Le {{$excursions->date->format('d-m-Y')}}</p>
-                    <img src='{{asset('assets/pictoscroll.png')}}'>
+                    <img class='logo-scroll'src='{{asset('assets/pictoscroll.png')}}'>
                 </div>
               </div>         
               <div class="carousel-item ">
@@ -27,7 +27,7 @@ data-ride="carousel">
                     <h3><a href="{{url('event', $expos->id)}}">Exposition</a></h3>
                     <p>{{$expos->description}}</p>
                     <p>Le {{$expos->date->format('d-m-Y')}}</p>
-                    <img src='{{asset('assets/pictoscroll.png')}}'>
+                    <img class='logo-scroll'src='{{asset('assets/pictoscroll.png')}}'>
                         
                 </div>
               </div>            
@@ -38,18 +38,16 @@ data-ride="carousel">
                     <h3><a href="{{url('event', $workshops->id)}}">WorkShop</a></h3>
                     <p>{{$workshops->description}}</p>
                     <p>Le {{$workshops->date->format('d-m-Y')}}</p>
-                    <img src='{{asset('assets/pictoscroll.png')}}'>
+                    <img class='logo-scroll'src='{{asset('assets/pictoscroll.png')}}'>
                 </div>
               </div>            
             </div>
-        </div>
-        
+        </header>     
     @endsection
 @section('content')
 
 <!-- SLOGAN -->
-
-<div class='row' id='slogan'>
+<section class='row' id='slogan'>
     <div class='col-lg-4 col-sm-12 animated hideR'>
         <img class='slogan-img' src='{{asset('assets/pictocoeur.jpg')}}' alt='Pictogramme Coeur'>
         <div>
@@ -61,10 +59,8 @@ data-ride="carousel">
         <div >
         <span>FLUID est un collectif</span><br>
         <span>de curieux</span>
-    </div>
-        <img class='slogan-img' src='{{asset('assets/pictooeil.jpg')}}' alt='Pictogramme Oeil'>
-        
-        
+        </div>
+        <img class='slogan-img' src='{{asset('assets/pictooeil.jpg')}}' alt='Pictogramme Oeil'>    
     </div>
     <div class='col-lg-4 col-sm-12 animated hideL'>
         <img class='slogan-img' src='{{asset('assets/pictobouche.jpg')}}' alt='Pictogramme Oeil'>
@@ -73,47 +69,49 @@ data-ride="carousel">
         <span>partage ni échange</span>
         </div>
     </div>
-</div>
+</section>
 
 <!-- EQUIPE FLUID -->
 
-<div class='row' id='equipe'>
-        
-    <div class='col-lg-4 col-sm-10 poster animated hideBL'>
-        <a class='equipe-hover'href="">
+<section class='row' id='equipe'>       
+    <div class='col-lg-4 col-sm-10 poster animated hideBL'>       
             <figure>
                 <figcaption class='caption'>Caroline<legend class='legend'>La fondatrice de FLUID</legend></figcaption>
-        </a>
-        <img class='equipe' src='{{asset('assets/caroline.jpg')}}'>           
+                <picture> 
+                        <source media="(min-width: 600px)"
+                        srcset='{{asset('assets/caroline.jpg')}}'>
+                        <img class='equipe' src='{{asset('assets/carolinepetite.jpg')}}'> 
+                </picture>          
             </figure>
-    </div>
-   
-    <div class='col-lg-4 col-sm-10 poster animated hideZ' id="poster-middle">
-        <a class='equipe-hover' href="">
+    </div>  
+    <div class='col-lg-4 col-sm-10 poster animated hideZ' id="poster-middle">      
             <figure>
                 <figcaption class='caption'>Sasha<legend class='legend'>L'étudiante en design'</legend></figcaption>
-        </a>
-        <img class='equipe' src='{{asset('assets/femme.jpg')}}''>  
-        <div class='adn'>
-            <h2>L'adn de fluid</h2>
-            <a class='btn-perso btn-adn' href='#'>Découvre le collectif fluid</a>
-        </div>
+                <picture> 
+                        <source media="(min-width: 600px)"
+                        srcset='{{asset('assets/femme.jpg')}}'>
+                        <img class='equipe' src='{{asset('assets/femmepetite.jpg')}}'>  
+                </picture>
+                <div class='adn'>
+                        <h2>L'adn de fluid</h2>
+                        <a class='btn-perso btn-adn' href='{{url('/collectif')}}'>Découvre le collectif fluid</a>
+                </div>
             </figure>
-    </div>
-   
-    <div class='col-lg-4 col-sm-10 poster animated hideBR'>
-        <a class='equipe-hover' href="">
+    </div>  
+    <div class='col-lg-4 col-sm-10 poster animated hideBR'>       
             <figure>
                 <figcaption class='caption'>Julien<legend class='legend'>Le passionné</legend></figcaption>
-        </a>
-        <img class='equipe' src='{{asset('assets/homme.jpg')}}'>  
+                <picture> 
+                        <source media="(min-width: 600px)"
+                        srcset='{{asset('assets/homme.jpg')}}'>
+                        <img class='equipe' src='{{asset('assets/hommepetit.jpg')}}'>  
+                </picture>
             </figure>
-    </div>
-   
-</div>
+    </div>  
+</section>
 
 <!-- INFOS EVENEMENTS -->
-<div class='row'>        
+<section class='row'>        
     <div class='col-lg-4 col-sm-10 poster animated hideL'>
             <a href="{{url('event', $expos->id)}}">
             <img src='{{asset('images/'.$expos->pictureEvent->url_img_event)}}'>
@@ -123,8 +121,7 @@ data-ride="carousel">
                     <p>{{$expos->date->format('d-m-Y')}}</p>
                 </div>
             </a>
-    </div>
-   
+    </div>  
     <div class='col-lg-4 col-sm-10 poster animated hideU'>
         <a href="{{url('event', $excursions->id)}}">
         <img src='{{asset('images/'.$excursions->pictureEvent->url_img_event)}}'>
@@ -134,8 +131,7 @@ data-ride="carousel">
                 <p>{{$excursions->date->format('d-m-Y')}}</p>
             </div>
         </a> 
-    </div>
-   
+    </div>  
     <div class='col-lg-4 col-sm-10 poster animated hideR'>
         <a href="{{url('event', $workshops->id)}}">
         <img src='{{asset('images/'.$workshops->pictureEvent->url_img_event)}}'>
@@ -146,10 +142,10 @@ data-ride="carousel">
             </div>
         </a>
     </div>  
-</div>
+</section>
 
 <!-- REJOINS FLUID -->
-<div class='row join-fluid'>
+<section class='row join-fluid'>
     <div class='col-lg-3 animated hideR'>
         <span>Deviens un membre actif et réactif de FLUID.</span><br>
         <span>Assouvis ton envie  de culture, ta soif de pratiques artistiques et d'échanges professionnels.</span>
@@ -161,49 +157,49 @@ data-ride="carousel">
         <h2>rejoins le fluid</h2>
         <a class='btn-perso btn-fluid'href='{{url('/adhesion')}}'>J'adhère au collectif</a>
     </div>
-</div>
+</section>
 
 <!-- NEWSLETTER & VIDEO -->
-<div class='row' id='video-nl'>  
+<section class='row' id='video-nl'>  
     <div class='col-lg-5 col-sm-12 animated hideR' id='newsletter'>
-                <div class="card-body ">
-                        @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-    
-                        @if (session('failure'))
-                            <div class="alert alert-danger" role="alert">
-                                {{ session('failure') }}
-                            </div>
-                        @endif
-                        
-                       <h2 class='hideU animated'>La newsletter des Fluids</h2>
-                       <p class='hideU animated'>M'abonner à la newsletter</p>
-    
-                       <form  class='hideU animated' action="{{url('/newsletter')}}" method='post'>
+        <div class="card-body ">
+            @if (session('success'))
+                <div class="alert alert-success  alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+                <h2 class='hideU animated'>La newsletter des Fluids</h2>
+                <p class='hideU animated'>M'abonner à la newsletter</p>   
+                    <form  class='hideU animated' action="{{url('/newsletter')}}" method='POST'>
                         {{ csrf_field() }}
-                           <div class='form-group '>
-                               <label for="email">Email</label>
-                               <input id='email' name='email' type="text" class='form-control ' placeholder='Votre Email'>
-                           </div>
-                           <div class='form-group'>
-                                <input type="submit" class='form-control'>
-                            </div>
-                       </form>
-                    </div>                    
-         </div>
-         <div class='col-lg-3 col-sm-12  video animated hideD'>
-                <video controls poster="{{asset('assets/videobouton.jpg')}}" width="500">
-                    
-                      <source src="{{asset('assets/soireefluid-converted.mp4')}}"
-                                type="video/mp4">
-                    
-                        Désolé, votre navigateur ne supporte pas cette vidéo :(
-                </video>
-          </div>
-</div>
+                    <div class='form-group '>
+                        <label for="email">Email</label>
+                        <input id='email' name='email' type="text" class='form-control ' placeholder='Votre Email'>
+                    </div>
+                    <div class='form-group'>
+                        <input type="submit" class='form-control'>
+                    </div>
+                    </form>
+        </div>                    
+    </div>
+    <div class='col-lg-3 col-sm-12  video animated hideD'>
+        <video controls poster="{{asset('assets/videobouton.jpg')}}" width="500">                   
+                <source src="{{asset('assets/soireefluid-converted.mp4')}}" type="video/mp4">                               
+                       Désolé, votre navigateur ne supporte pas cette vidéo :(
+        </video>
+    </div>
+</section>
+
+<!-- SECTION INSTAGRAM -->
+<section id='instafluid'>
+    <p class='insta-fluid animated hideD'><a target='_blank'href='https://www.instagram.com/fluid_flot_graphique/?hl=fr'><i class="fab fa-instagram "></i></a></p>
+    <h2 class='animated hideBR'>Rejoins le FLUID Instagram</h2>
+    <div class='col-lg-12 animated hideZ'id="instafeed"></div>   
+</section>
 
 @endsection 
 
