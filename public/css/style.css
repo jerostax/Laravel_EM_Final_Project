@@ -10,11 +10,9 @@
     font-family: 'FuturaStd';
     src : url('../fonts/FuturaStd-Medium.otf');
 }
-
 body {
     background-color: white;
     font-family: 'FuturaStd';
- 
 }
 html {
     scroll-behavior: smooth;
@@ -37,6 +35,13 @@ a:hover {
     color: #0000ff;
     opacity: 0.8;
 }
+h1 {
+    font-family: 'Rakkas';
+    color:#0000ff;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
 /*---------- FRONT VIEWS & PARTIALS ----------*/
 
 /*------ MENU VIEW -----*/
@@ -44,29 +49,25 @@ a:hover {
     font-weight: bold;
     background-color:white;
 }
-
 .navbar-light .navbar-nav .nav-link, .search{
     font-family: 'Futura';
     color:#0000ff;
     transition: 0.7s;
 }
-
 .active {
     color:rgba(255,49,23,0.9) !important;
 }
 .navbar-light .navbar-nav .nav-link:hover, .search:hover {
     color:rgba(255,49,23,0.9);
-
 }
 .mynav {
-    margin-right:0.5em;
-    
+    margin-right:0.5em;    
 }
 .navbar-nav > a, .search {
     margin-right: 2em;
 }
 #navbarNavAltMarkup {
-    margin-left:15%;
+    margin-left:10%;
     font-size: 1rem;
 }
 .dropdown-item {
@@ -97,7 +98,7 @@ a:hover {
     text-transform: uppercase;
 }
 #nav-sn {
-    margin-left: 15em;
+    margin-left: 8em;
     font-size: 1.2em;
 }
 .search-bar {
@@ -126,9 +127,9 @@ a:hover {
 .carousel-item{
     position: relative;
 }
-
 #carouselExampleFade{
     max-height: 780px;
+    margin-bottom: 8em;
 } 
 .carousel-caption>h2 {
     font-size: 5rem;
@@ -181,7 +182,6 @@ a:hover {
     position:absolute;
     bottom: 1em;
 }
-
 .carousel-indicators {
     right: 60%;
     margin-bottom:0;
@@ -193,7 +193,6 @@ a:hover {
     border-radius: 50%;
     background-color: grey;
     opacity: 0.8;
-
 }
 .carousel-indicators .active {
     background-color:rgba(255,49,23, 0.8);
@@ -205,6 +204,7 @@ a:hover {
     font-size: 1.5em;
     margin-left: 5.5em;
     color: #0000ff;
+    margin-bottom: 5em;
 }
 .slogan-img {
     margin-top: 2em;
@@ -222,17 +222,17 @@ a:hover {
     font-size: 2em;
     text-align: center;
     transition: 0.7s;
-
 }
 .legend {
     font-size: 0.5em;
+    line-height: 0.5em;
+    padding-bottom: 0.5em;
 }
 .equipe {
     height: 500px;
     width: 100%;
 }
-.caption:hover {
-    
+.caption:hover {   
     color: rgba(255,49,23, 0.9);
 }
 .equipe-hover:hover {
@@ -256,7 +256,6 @@ a:hover {
 }
 .btn-adn {
     border-color:white !important;
-
 }
 .btn-adn:hover {
     background-color: #0000ff;
@@ -267,8 +266,11 @@ a:hover {
     position:relative;
     padding-left:0;
     padding-right:0;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10%;
+}
+.title-evnt{
+    text-align: center;
 }
 .poster > a > img {
     height: 400px;
@@ -291,6 +293,10 @@ a:hover {
     font-weight: bold;
     font-size: 1.5em;
 }
+.join-fluid {
+    margin-top: 4em;
+    margin-bottom: 8em; 
+}
 .join-fluid > .col-lg-3 {
     margin-right: 4em;
     margin-left: 2.5em;
@@ -298,8 +304,7 @@ a:hover {
 .join-fluid > .col-lg-3 > span {
     color:rgb(153,153,153);
     font-size: 1.5em;
-    line-height: 2em;
-    
+    line-height: 2em;   
 }
 .join-fluid > .col-lg-3> h2 {
     margin-top: 1.5em;
@@ -308,8 +313,7 @@ a:hover {
     text-transform: uppercase;
     font-weight: bold;
 }
-.btn-perso {
-    
+.btn-perso {  
     border: 10px solid yellow;
     padding-top: 1em;
     padding-bottom : 1em;
@@ -318,7 +322,7 @@ a:hover {
     font-weight: bolder;
     text-transform: uppercase;
     font-size: 1.1em;
-    transition: 1.5s;
+    transition: 0.7s;
 }
 .btn-fluid:hover {
     opacity: 1;
@@ -326,9 +330,11 @@ a:hover {
     color:white;
 }
 #video-nl {
-    margin-top: 8em;
+    margin-top: 5em;
 }
-
+.title-nletter {
+    text-align: right;
+}
 /*----- NEWSLETTER -----*/
 #newsletter {
     background-color:#0000ff;
@@ -347,16 +353,14 @@ a:hover {
     text-transform: uppercase;
     padding-bottom: 1em;
 }
-#instafeed {
-    
+#instafeed {    
     margin-top: 2em;
     padding-left:0;
     padding-right:0;
     margin-left: 5em;   
 }
 #instafeed  > a > img {
-    width: 188px;
-    
+    width: 188px;   
 }
 .insta-fluid  {
     text-align: center;
@@ -440,19 +444,36 @@ a:hover {
 }
 .event-desc > p {
     padding-bottom: 4em;
-    text-align: left;
-    
+    text-align: left;   
 }
 .billeterie {
     margin-top: 20em;
 }
-/*----- PRODUCT VIEW -----*/
-.product-view {
+.info-event > .desc {
+    padding-bottom: 2em;
+}
+.savoir-plus {
     
-    margin-top: 1em;
+    border: 1px solid yellow;
+    background-color: yellow;
+    padding: 0.5em;
+}
+.btn-billet {
+    margin-top:5em;
+    margin-bottom: 5em;
+}
+
+.event-adh {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*----- SHOP VIEW -----*/
+.product-view {   
+    margin-top: 3em;
     margin-right: 0em;
     margin-left: 2.2em;
-    margin-bottom: 2em;
+    margin-bottom: 10em;
 }
 .product-view > a > img {
     height: 200px;;
@@ -461,27 +482,33 @@ a:hover {
     font-weight: 900;
     color: rgba(255,49,23);
 }
+.product-info {
+    margin-top: 2em;
+}
 
 /*----- SHOW PRODUCT VIEW -----*/
 .show-product {
     margin-left: 2em;
+    margin-bottom: 5em;
 }
 .product-left {
-    margin-right: 8em;
+    margin-right: 3em;
 }
 .product-right {
-    margin-top: 5em;
+    margin-top: 7em;
 }
 .product-left > img {
     margin-bottom: 2em;
     margin-top: 2em;
 }
 /*----- FOOTER VIEW -----*/
+.contact-us {
+    color:white;
+}
 footer {
     /* margin-top:5em; */
     background-color:black;
-    width: 101%;
- 
+    width: 101%; 
 }
 .footer {
     margin-top:4em;
@@ -502,7 +529,6 @@ footer {
 .footer > a > i:hover {
     color: rgba(0, 0, 255);
 }
-
 #contact {
     margin-left: 4em;
     margin-top: 3em;
@@ -535,13 +561,11 @@ footer {
 #arrow {
     position: fixed;
     color:rgba(255,49,23,0.8);
-    bottom:0.5em;
-    right:1em;
-    font-size: 2em;
-  
+    bottom:0.2em;
+    right:0.5em;
+    font-size: 4em; 
 }
-.year {
-  
+.year { 
     margin-right: 1em;
 }
 .mentions {
@@ -552,7 +576,7 @@ footer {
     text-transform: uppercase;
 }
 .mentions-2 {
-    margin-left: 19%;
+    margin-left: 15%;
     word-spacing: 0;
 }
 .mentions-2 > span {
@@ -623,8 +647,7 @@ footer {
     font-weight: bold;
     margin-bottom: 5em;
     font-size: 1.2em;
-    margin-top: 2em;
-   
+    margin-top: 2em;   
 }
 /*---------- AUTH VIEWS ----------*/
 
@@ -663,8 +686,7 @@ footer {
     background-color:rgba(255,49,23,0.8);
     border: 1px solid transparent;
     border-radius: 0.5em;
-    height: 485px;
-    
+    height: 485px;    
 }
 .page-item.active .page-link {
     background-color: rgba(255,49,23,0.8);
@@ -679,8 +701,7 @@ footer {
 #v-pills-tabContent > .active {
     color: black !important;
 }
-#dash-title {
-    
+#dash-title {   
     font-weight: bold;
     color:#0000ff;
 }
@@ -715,7 +736,6 @@ footer {
     margin-bottom:5.5em;
 }
 
-
 /*---- MEDIA QUERIES -----*/
 @media screen and (max-width: 1380px) {
     #nav-sn {
@@ -737,8 +757,7 @@ footer {
         margin-left: 7%;
     }
 }
-@media screen and (max-width: 650px) {
-   
+@media screen and (max-width: 650px) {  
     .logo-scroll {
         display: none;
     }

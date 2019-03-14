@@ -146,7 +146,7 @@ $(document).ready(function(){
         //Affiche année en cours en bas du footer
         let date = new Date();
         let year = date.getFullYear();
-
+        
         $('.year').text(year);
      
 })

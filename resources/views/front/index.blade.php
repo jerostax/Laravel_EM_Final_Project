@@ -11,7 +11,7 @@ data-ride="carousel">
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active ">
-                <img src="{{asset('assets/excursion.jpg')}}" class="d-block w-100" alt="Excursion">
+                <img src="{{asset('assets/excursion.jpg')}}" class="d-block w-100" alt="{{$excursions->titre}}">
                 <div class='cartouche animated fadeInRight'>
                     <h2>{{$excursions->titre}}</h2>
                     <h3><a href="{{url('event', $excursions->id)}}">Excursion</a></h3>
@@ -21,7 +21,7 @@ data-ride="carousel">
                 </div>
               </div>         
               <div class="carousel-item ">
-                <img src="{{asset('assets/expoaaltoalvaro.jpg')}}" class="d-block .img-fluid w-100 " alt="Exposition">
+                <img src="{{asset('assets/expoaaltoalvaro.jpg')}}" class="d-block .img-fluid w-100 " alt="{{$expos->titre}}">
                 <div class='cartouche animated fadeInRight'>
                     <h2>{{$expos->titre}}</h2>
                     <h3><a href="{{url('event', $expos->id)}}">Exposition</a></h3>
@@ -32,7 +32,7 @@ data-ride="carousel">
                 </div>
               </div>            
               <div class="carousel-item ">
-                <img src="{{asset('assets/friseworkshop.jpg')}}" class="d-block w-100" alt="WorkShop">
+                <img src="{{asset('assets/friseworkshop.jpg')}}" class="d-block w-100" alt="{{$workshops->titre}}">
                 <div class='cartouche animated fadeInRight'>
                     <h2>{{$workshops->titre}}</h2>
                     <h3><a href="{{url('event', $workshops->id)}}">WorkShop</a></h3>
@@ -45,8 +45,50 @@ data-ride="carousel">
         </header>     
     @endsection
 
-<!-- SLOGAN -->
+    
+
 @section('content')
+<!-- EQUIPE FLUID -->
+<h1 class='animated hideR'>l'equipe fluid</h1> 
+<section class='row' id='equipe'>   
+       
+    <div class='col-lg-4 col-sm-10 poster animated hideBL'>    
+           
+            <figure>
+                <figcaption class='caption'>Caroline<legend class='legend'>La fondatrice de FLUID</legend></figcaption>
+                <picture> 
+                        <source media="(min-width: 600px)"
+                        srcset='{{asset('assets/caroline.jpg')}}'>
+                        <img class='equipe' src='{{asset('assets/carolinepetite.jpg')}}' alt='Photo de Caroline'> 
+                </picture>          
+            </figure>
+    </div>  
+    <div class='col-lg-4 col-sm-10 poster animated hideZ' id="poster-middle">      
+            <figure>
+                <figcaption class='caption'>Sasha<legend class='legend'>L'étudiante en design'</legend></figcaption>
+                <picture> 
+                        <source media="(min-width: 600px)"
+                        srcset='{{asset('assets/femme.jpg')}}'>
+                        <img class='equipe' src='{{asset('assets/femmepetite.jpg')}}' alt='Photo de Sasha'>  
+                </picture>
+                <div class='adn'>
+                        <h2>L'adn de fluid</h2>
+                        <a class='btn-perso btn-adn' href='{{url('/collectif')}}'>Découvre le collectif fluid</a>
+                </div>
+            </figure>
+    </div>  
+    <div class='col-lg-4 col-sm-10 poster animated hideBR'>       
+            <figure>
+                <figcaption class='caption'>Julien<legend class='legend'>Le passionné</legend></figcaption>
+                <picture> 
+                        <source media="(min-width: 600px)"
+                        srcset='{{asset('assets/homme.jpg')}}'>
+                        <img class='equipe' src='{{asset('assets/hommepetit.jpg')}}' alt='Photo de Julien'>  
+                </picture>
+            </figure>
+    </div>  
+</section>
+<!-- SLOGAN -->
 <section class='row' id='slogan'>
     <div class='col-lg-4 col-sm-12 animated hideR'>
         <img class='slogan-img' src='{{asset('assets/pictocoeur.jpg')}}' alt='Pictogramme Coeur'>
@@ -71,50 +113,15 @@ data-ride="carousel">
     </div>
 </section>
 
-<!-- EQUIPE FLUID -->
 
-<section class='row' id='equipe'>       
-    <div class='col-lg-4 col-sm-10 poster animated hideBL'>       
-            <figure>
-                <figcaption class='caption'>Caroline<legend class='legend'>La fondatrice de FLUID</legend></figcaption>
-                <picture> 
-                        <source media="(min-width: 600px)"
-                        srcset='{{asset('assets/caroline.jpg')}}'>
-                        <img class='equipe' src='{{asset('assets/carolinepetite.jpg')}}'> 
-                </picture>          
-            </figure>
-    </div>  
-    <div class='col-lg-4 col-sm-10 poster animated hideZ' id="poster-middle">      
-            <figure>
-                <figcaption class='caption'>Sasha<legend class='legend'>L'étudiante en design'</legend></figcaption>
-                <picture> 
-                        <source media="(min-width: 600px)"
-                        srcset='{{asset('assets/femme.jpg')}}'>
-                        <img class='equipe' src='{{asset('assets/femmepetite.jpg')}}'>  
-                </picture>
-                <div class='adn'>
-                        <h2>L'adn de fluid</h2>
-                        <a class='btn-perso btn-adn' href='{{url('/collectif')}}'>Découvre le collectif fluid</a>
-                </div>
-            </figure>
-    </div>  
-    <div class='col-lg-4 col-sm-10 poster animated hideBR'>       
-            <figure>
-                <figcaption class='caption'>Julien<legend class='legend'>Le passionné</legend></figcaption>
-                <picture> 
-                        <source media="(min-width: 600px)"
-                        srcset='{{asset('assets/homme.jpg')}}'>
-                        <img class='equipe' src='{{asset('assets/hommepetit.jpg')}}'>  
-                </picture>
-            </figure>
-    </div>  
-</section>
 
 <!-- INFOS EVENEMENTS -->
-<section class='row'>        
+<h1 class='animated hideR title-evnt'>Prochains évènements</h1> 
+<section class='row'>    
+        
     <div class='col-lg-4 col-sm-10 poster animated hideL'>
             <a href="{{url('event', $expos->id)}}">
-            <img src='{{asset('images/'.$expos->pictureEvent->url_img_event)}}'>
+            <img src='{{asset('images/'.$expos->pictureEvent->url_img_event)}}' alt='{{$expos->titre}}'>
                 <div class='info'>
                     <h2>{{$expos->titre}}</h2>
                     <h3>Exposition</h3>
@@ -124,7 +131,7 @@ data-ride="carousel">
     </div>  
     <div class='col-lg-4 col-sm-10 poster animated hideU'>
         <a href="{{url('event', $excursions->id)}}">
-        <img src='{{asset('images/'.$excursions->pictureEvent->url_img_event)}}'>
+        <img src='{{asset('images/'.$excursions->pictureEvent->url_img_event)}}' alt='{{$excursions->titre}}'>
             <div class='info'>
                 <h2>{{$excursions->titre}}</h2>
                 <h3>Excursion</h3>
@@ -134,7 +141,7 @@ data-ride="carousel">
     </div>  
     <div class='col-lg-4 col-sm-10 poster animated hideR'>
         <a href="{{url('event', $workshops->id)}}">
-        <img src='{{asset('images/'.$workshops->pictureEvent->url_img_event)}}'>
+        <img src='{{asset('images/'.$workshops->pictureEvent->url_img_event)}}' alt='{{$workshops->titre}}'>
             <div class='info'>
                 <h2>{{$workshops->titre}}</h2>
                 <h3>WorkShop</h3>
@@ -145,13 +152,14 @@ data-ride="carousel">
 </section>
 
 <!-- REJOINS FLUID -->
+<h1 class='animated hideR'>rejoins le fluid</h1> 
 <section class='row join-fluid'>
     <div class='col-lg-3 animated hideR'>
         <span>Deviens un membre actif et réactif de FLUID.</span><br>
         <span>Assouvis ton envie  de culture, ta soif de pratiques artistiques et d'échanges professionnels.</span>
     </div>
     <div class='col-lg-3 animated hideZ'>
-        <img src='{{asset('assets/picto.jpg')}}'>
+        <img src='{{asset('assets/picto.jpg')}}' alt='Fluid est la'>
     </div>
     <div class='col-lg-3 animated hideL'>
         <h2>rejoins le fluid</h2>
@@ -160,6 +168,7 @@ data-ride="carousel">
 </section>
 
 <!-- NEWSLETTER & VIDEO -->
+<h1 class='animated hideR title-nletter'>abonne toi à notre newsletter</h1> 
 <section class='row' id='video-nl'>  
     <div class='col-lg-5 col-sm-12 animated hideR' id='newsletter'>
         <div class="card-body ">
