@@ -44,7 +44,7 @@
                                 <div class='col-lg-3 col-sm-12 footer' id='picto-footer'>
                                                 <a target="_blank" href="https://www.facebook.com/groups/1797643553621438/"><i class="fab fa-facebook-f"></i></a>
                                                 <a target="_blank" href="https://www.instagram.com/fluid_flot_graphique/?hl=fr"><i class="fab fa-instagram"></i></a>
-                                                <a target="_blank" href=""><i class="fab fa-pinterest"></i></a>
+                                             
                                                 <div id='mention'>
                                                                 <p>Site réalisé par <a target='_blank' href='https://www.ecole-multimedia.com/'>L'ÉCOLE MULTIMÉDIA</a></p>
                                                                 <p>Camille Nourtier</p>

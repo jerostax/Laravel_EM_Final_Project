@@ -21,15 +21,9 @@
             <div class='btn-billet animated zoomIn'><a class='btn-perso btn-fluid'href='#haWidget'>Acheter un Billet</a></div>
     <div class='event-adh animated bounceInLeft'>Adhère au <a href='{{(url('/collectif'))}}'>collectif</a> et bénificie du <a href='{{url('/adhesion')}}'>prix adhérent !</a></div>
             
-            {{-- <div class='row event-sn animated fadeInRight'>
-                    <a class="nav-item nav-link mynav" target="_blank" href="https://www.facebook.com/groups/1797643553621438/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="nav-item nav-link mynav" target="_blank" href="https://www.instagram.com/fluid_flot_graphique/?hl=fr"><i class="fab fa-instagram"></i></a>
-                    <a class="nav-item nav-link mynav" target="_blank" href=""><i class="fab fa-pinterest"></i></a>
-            </div> --}}
     </div>
     <div class='col-lg-12 event-desc'>
         <p>{{$events->description}}</p>  
-        {{-- <a class='btn-perso btn-fluid'href='#haWidget'>Acheter un Billet</a> --}}
     </div>
 </section>
 

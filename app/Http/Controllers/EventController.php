@@ -60,7 +60,7 @@ class EventController extends Controller
              'date' => "required|date:Y-m-d",
             'category_id' => 'integer',
             'form' => 'required|string',
-            'picture' => 'image|max:3000', 
+            'picture' => 'image|dimensions:max_width=1200,max_height=900', 
         ]);
         $event = Event::create($request->all());
         
@@ -126,7 +126,7 @@ class EventController extends Controller
             'date' => "required|date:Y-m-d",
             'category_id' => 'integer',
             'form' => 'required|string',
-            'picture' => 'image|max:3000',
+            'picture' => 'image|dimensions:max_width=1200,max_height=900',
         ]);
         $event = Event::find($id); // associé les fillables
 

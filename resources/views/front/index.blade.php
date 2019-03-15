@@ -2,7 +2,7 @@
 @section('header')
 
 <!-- SLIDER -->
-<header id="carouselExampleFade" class="carousel carousel-fade "
+<header id="carouselExampleFade" class="carousel carousel-fade animated zoomIn"
 data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="carouselExampleCaptions" data-slide-to="0" class="active"></li>

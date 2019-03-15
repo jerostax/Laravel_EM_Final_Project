@@ -50,7 +50,7 @@ class ProductController extends Controller
             'prix' => 'required',
             'status' => 'in:Publié,Brouillon',
             'form' => 'required|string',
-            'picture' => 'image|max:3000', 
+            'picture' => 'image|dimensions:max_width=600,max_height=600', 
         ]);
         $product = Product::create($request->all());
         
@@ -110,7 +110,7 @@ class ProductController extends Controller
             'prix' => 'required',
             'status' => 'in:Publié,Brouillon',
             'form' => 'required|string',
-            'picture' => 'image|max:3000',
+            'picture' => 'image|dimensions:max_width=600,max_height=600',
         ]);
         $product = Product::find($id); // associé les fillables
 

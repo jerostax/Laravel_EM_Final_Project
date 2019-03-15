@@ -11,20 +11,19 @@
     <div class='col-lg-5'>
         <h1 class='single-title animated fadeInDown'>{{$event->titre}}</h1>
         <h2 class='animated fadeInUp'>{{$event->category->titre}}</h2>
-        <img class='animated zoomIn'src="{{asset('images/'.$event->pictureEvent->url_img_event)}}">
+    <img class='animated zoomIn'src="{{asset('images/'.$event->pictureEvent->url_img_event)}}" alt='{{$event->titre}}'>
     </div>
     <div class='col-lg-5 event-right'>
             <h2 class='animated bounceInLeft'>{{$event->category->titre}}</h2>
             <p class='animated fadeInUp'>Le {{$event->date->format('d-m-Y')}}</p>
-            <div class='row event-sn animated fadeInRight'>
-                    <a class="nav-item nav-link mynav" target="_blank" href="https://www.facebook.com/groups/1797643553621438/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="nav-item nav-link mynav" target="_blank" href="https://www.instagram.com/fluid_flot_graphique/?hl=fr"><i class="fab fa-instagram"></i></a>
-                    <a class="nav-item nav-link mynav" target="_blank" href=""><i class="fab fa-pinterest"></i></a>
-            </div>
+            <p class='animated fadeInLeft '>Prix: <span class='product-price'>{{$event->prix}} €</span></p>
+            <p class='animated fadeInRight'>Prix Adhérent: <span class='product-price'>{{$event->promo}} €</span></p>
+            <div class='btn-billet animated zoomIn'><a class='btn-perso btn-fluid'href='#haWidget'>Acheter un Billet</a></div>
+    <div class='event-adh animated bounceInLeft'>Adhère au <a href='{{(url('/collectif'))}}'>collectif</a> et bénificie du <a href='{{url('/adhesion')}}'>prix adhérent !</a></div>
+            
     </div>
     <div class='col-lg-12 event-desc'>
         <p>{{$event->description}}</p>  
-        <a class='btn-perso btn-fluid'href='#haWidget'>Acheter un Billet</a>
     </div>
 </section>
 
@@ -33,6 +32,5 @@
 <iframe class='billeterie' id="haWidget" allowtransparency="true"  src="{{$event->form}}" style="width:100%;height:750px;border:none;"  ></iframe><div style="width:100%;text-align:center;">Propulsé par <a href="https://www.helloasso.com" rel="nofollow">HelloAsso</a></div>
 
 @endsection
-
 
 
