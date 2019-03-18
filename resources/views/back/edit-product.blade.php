@@ -47,7 +47,7 @@
                                 <input type="radio" @if($product->status=='Brouillon') checked @endif name="status" value="Brouillon" > Brouillon<br>
                                 </div>
             <div class="input-file">
-                <p>Image (largeur et hauteur maximum 600px) :</p>
+                <p>Image (largeur max 350px et hauteur max 600px) :</p>
                 <input class="file" type="file" name="picture" >
                 @if($errors->has('picture')) <span class="error bg-warning ">{{$errors->first('picture')}}</span> @endif
             </div>

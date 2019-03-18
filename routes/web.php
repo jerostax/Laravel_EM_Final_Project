@@ -16,6 +16,7 @@ if(version_compare(PHP_VERSION, '7.2.0', '>=')) { error_reporting(E_ALL ^ E_NOTI
 
 Auth::routes();
 
+// Routes côté front
 Route::post('/newsletter', 'NewsletterController@store');   
 
 Route::get('/', 'FrontController@index')->name('home');
@@ -37,6 +38,7 @@ route::get('/collectif', function() {
     return view('front.collectif');
 });
 
+//Routes côté back
 Route::prefix('admin')->group(function() {
    
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

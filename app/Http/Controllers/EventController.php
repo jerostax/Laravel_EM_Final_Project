@@ -23,8 +23,6 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::orderBy('date', 'desc')->paginate($this->paginate);
-        // $products = Product::paginate($this->paginate);
-        // $partners = Partner::paginate($this->paginate);
 
         return view('back.index', ['events' => $events]);
     }

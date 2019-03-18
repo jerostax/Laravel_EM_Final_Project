@@ -184,6 +184,7 @@ data-ride="carousel">
                 <h2 class='hideU animated'>La newsletter des Fluids</h2>
                 <p class='hideU animated'>M'abonner à la newsletter</p>   
                     <form  class='hideU animated' action="{{url('/newsletter')}}" method='POST'>
+                        {{method_field('POST')}}
                         {{ csrf_field() }}
                     <div class='form-group '>
                         <label for="email">Email</label>

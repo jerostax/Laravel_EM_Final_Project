@@ -12,6 +12,7 @@
         <meta property="og:image" content="{{asset('assets/LOGbleu.jpg')}}" />
         <meta property="og:description" content="Fluid est un collectif de curieux de l'image qui cherchent à assouvir leurs envies de culture, de rencontres professionelles. Fluid permet de se réunir pour des expos, excursions, soirées et workshops, principalement sur Paris." />
     <title>FLUID, le collectif curieux - Expositions, Workshops et soirées sur Paris</title>
+    <link rel="shortcut-icon" href="{{asset('assets/favicon.ico')}}" type="image/ico" />
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">

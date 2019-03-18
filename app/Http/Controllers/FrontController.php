@@ -59,6 +59,7 @@ class FrontController extends Controller
 
         return view('front.shop', ['products' => $products]);
     }
+    //vue 1 évènement
     public function showOneEvent(int $id){
 
         
@@ -67,6 +68,7 @@ class FrontController extends Controller
         
         return view('front.show-event', ['events' => $events]);
     }
+    //vue 1 produit
     public function showOneProduct(int $id){
 
         
