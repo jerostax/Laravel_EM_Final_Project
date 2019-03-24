@@ -15,7 +15,7 @@
       <h3>{{$expo->titre}}</h3>
       <p>{{$expo->date->format('d-m-Y')}}</p>
       <p class='desc'>{{$expo->description}}</p>
-      <a class='savoir-plus'href='{{url('event', $expo->id)}}'>En savoir plus</a>
+      <a class='savoir-plus'href='{{url('event', $expo->id)}}'>Ramène ton FLUID</a>
    </div>
   </div>
   @endforeach
@@ -35,7 +35,7 @@
         <h3>{{$workshop->titre}}</h3>
         <p>{{$workshop->date->format('d-m-Y')}}</p>
         <p class='desc'>{{$workshop->description}}</p>
-        <a class='savoir-plus' href='{{url('event', $workshop->id)}}'>En savoir plus</a>
+        <a class='savoir-plus' href='{{url('event', $workshop->id)}}'>Ramène ton FLUID</a>
      </div>
     </div>
     @endforeach
@@ -54,7 +54,7 @@
           <h3>{{$excursion->titre}}</h3>
           <p>{{$excursion->date->format('d-m-Y')}}</p>
           <p class='desc'>{{$excursion->description}}</p>
-          <a class='savoir-plus' href='{{url('event', $excursion->id)}}'>En savoir plus</a>
+          <a class='savoir-plus' href='{{url('event', $excursion->id)}}'>Ramène ton FLUID</a>
        </div>
       </div>
       @endforeach
@@ -73,7 +73,7 @@
             <h3>{{$soiree->titre}}</h3>
             <p>{{$soiree->date->format('d-m-Y')}}</p>
             <p class='desc'>{{$soiree->description}}</p>
-            <a class='savoir-plus' href='{{url('event', $soiree->id)}}'>En savoir plus</a>
+            <a class='savoir-plus' href='{{url('event', $soiree->id)}}'>Ramène ton FLUID</a>
          </div>
         </div>
         @endforeach

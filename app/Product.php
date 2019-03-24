@@ -12,6 +12,7 @@ class Product extends Model
     public function scopePublishedProduct($query) {
         return $query->where('status', 'Publié');
     }
+    //relation One to One
     public function pictureProduct(){
         return $this->hasOne(PictureProduct::class);
     }

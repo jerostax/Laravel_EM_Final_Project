@@ -24,9 +24,11 @@ class Event extends Model
     public function scopePublishedEvent($query) {
         return $query->where('status', 'Publié');
     }
+    
     public function category(){
         return $this->belongsTo(Category::class);
     }
+    //relation One to One
     public function pictureEvent(){
         return $this->hasOne(PictureEvent::class);
     }
